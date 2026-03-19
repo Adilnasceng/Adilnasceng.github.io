@@ -1,2 +1,2 @@
-# Adilnasceng.github.io
-Personal portfolio — Computer Engineer | AI & Robotics
+Personal portfolio website built with HTML, CSS and JavaScript.
+Live: https://adilnasceng.github.io

@@ -1,0 +1,3337 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>Adil NAS | Computer Engineer | AI & Robotics</title>
+  <meta name="description" content="Computer Engineer specializing in AI & Robotics. ROS2, SLAM, autonomous systems ve makine öğrenmesi üzerine çalışıyorum. Teknofest 2.si." />
+  <meta name="keywords" content="adil nas, computer engineer, robotics, artificial intelligence, ROS2, SLAM, autonomous systems, machine learning, deep learning, python, c++, teknofest" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://adilnasceng.github.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://adilnasceng.github.io/" />
+  <meta property="og:title" content="Adil NAS | Computer Engineer | AI & Robotics" />
+  <meta property="og:description" content="Computer Engineer specializing in AI & Robotics. ROS2, SLAM, autonomous systems ve makine öğrenmesi üzerine çalışıyorum. Teknofest 2.si." />
+  <meta property="og:image" content="https://adilnasceng.github.io/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://adilnasceng.github.io/" />
+  <meta name="twitter:title" content="Adil NAS | Computer Engineer | AI & Robotics" />
+  <meta name="twitter:description" content="Computer Engineer specializing in AI & Robotics. ROS2, SLAM, autonomous systems ve makine öğrenmesi üzerine çalışıyorum." />
+  <meta name="twitter:image" content="https://adilnasceng.github.io/og-image.png" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Adil NAS",
+    "url": "https://adilnasceng.github.io",
+    "jobTitle": "Computer Engineer",
+    "description": "Computer Engineer specializing in AI & Robotics. ROS2, SLAM, autonomous systems ve makine öğrenmesi üzerine çalışıyorum.",
+    "sameAs": [
+      "https://github.com/Adilnasceng",
+      "https://linkedin.com/in/adilnas",
+      "mailto:adilnasceng@gmail.com"
+    ],
+    "knowsAbout": ["ROS2", "SLAM", "Autonomous Systems", "Machine Learning", "Deep Learning", "Python", "C++", "Robotics", "Computer Vision"]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =====================================================
+       CSS VARIABLES & THEME SYSTEM
+    ===================================================== */
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #1a1a28;
+      --bg-card-hover: #1f1f30;
+      --border: rgba(108,92,231,0.2);
+      --text-primary: #e8e8f0;
+      --text-secondary: #a0a0b8;
+      --text-muted: #666680;
+      --accent: #6c5ce7;
+      --accent-light: #a29bfe;
+      --green: #00cec9;
+      --gradient-1: linear-gradient(135deg, #6c5ce7, #a29bfe);
+      --gradient-2: linear-gradient(135deg, #00cec9, #6c5ce7);
+      --shadow: 0 4px 30px rgba(108,92,231,0.15);
+      --shadow-lg: 0 8px 60px rgba(108,92,231,0.25);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+      --navbar-height: 70px;
+    }
+
+    [data-theme="light"] {
+      --bg-primary: #f8f8ff;
+      --bg-secondary: #ffffff;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f0f0ff;
+      --border: #e0e0f0;
+      --text-primary: #1a1a2e;
+      --text-secondary: #555570;
+      --text-muted: #9999bb;
+      --shadow: 0 4px 30px rgba(108,92,231,0.1);
+      --shadow-lg: 0 8px 60px rgba(108,92,231,0.15);
+    }
+
+    /* =====================================================
+       RESET & BASE
+    ===================================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background var(--transition), color var(--transition);
+      cursor: none;
+    }
+
+    @media (pointer: coarse) {
+      body { cursor: auto; }
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font-family: inherit; cursor: none; }
+    @media (pointer: coarse) { button { cursor: pointer; } }
+
+    /* =====================================================
+       SCROLL PROGRESS BAR
+    ===================================================== */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: var(--gradient-1);
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
+
+    /* =====================================================
+       CUSTOM CURSOR
+    ===================================================== */
+    .cursor-dot,
+    .cursor-ring {
+      position: fixed;
+      pointer-events: none;
+      z-index: 99999;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.3s;
+    }
+
+    .cursor-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      top: 0; left: 0;
+    }
+
+    .cursor-ring {
+      width: 36px;
+      height: 36px;
+      border: 2px solid var(--accent-light);
+      border-radius: 50%;
+      top: 0; left: 0;
+      transition: width 0.25s, height 0.25s, border-color 0.25s, opacity 0.3s;
+    }
+
+    .cursor-ring.hover {
+      width: 56px;
+      height: 56px;
+      border-color: var(--green);
+    }
+
+    @media (pointer: coarse) {
+      .cursor-dot, .cursor-ring { display: none; }
+    }
+
+    /* =====================================================
+       NAVBAR
+    ===================================================== */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--navbar-height);
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      transition: background var(--transition), border-color var(--transition);
+    }
+
+    [data-theme="light"] #navbar {
+      background: rgba(248,248,255,0.9);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.15rem;
+      font-weight: 600;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      padding: 0.5rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: color var(--transition), background var(--transition);
+      position: relative;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent-light);
+      background: rgba(108,92,231,0.1);
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 4px; left: 50%;
+      transform: translateX(-50%);
+      width: 4px; height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* CV Download Nav Button */
+    .nav-cv-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent-light);
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      background: rgba(108,92,231,0.1);
+      transition: all var(--transition);
+    }
+
+    .nav-cv-btn:hover {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(108,92,231,0.4);
+    }
+
+    /* Theme Toggle */
+    #theme-toggle {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: rgba(108,92,231,0.1);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: all var(--transition);
+    }
+
+    #theme-toggle:hover {
+      background: rgba(108,92,231,0.2);
+      color: var(--accent-light);
+      transform: rotate(20deg);
+    }
+
+    /* Language Toggle */
+    #lang-toggle {
+      width: 44px; height: 40px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-secondary);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #lang-toggle:hover {
+      background: rgba(0,206,201,0.12);
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      width: 40px; height: 40px;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: all 0.3s;
+      transform-origin: center;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile Nav Overlay */
+    .nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 998;
+      backdrop-filter: blur(4px);
+    }
+
+    .nav-overlay.show { display: block; }
+
+    /* Mobile Nav */
+    @media (max-width: 900px) {
+      .nav-links {
+        position: fixed;
+        top: var(--navbar-height);
+        right: -280px;
+        width: 280px;
+        height: calc(100vh - var(--navbar-height));
+        background: var(--bg-secondary);
+        border-left: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 1.5rem 1rem;
+        z-index: 999;
+        transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+        overflow-y: auto;
+      }
+
+      .nav-links.open { right: 0; }
+
+      .nav-links li { width: 100%; }
+
+      .nav-links a {
+        display: block;
+        padding: 0.85rem 1rem;
+        font-size: 1rem;
+        border-radius: var(--radius);
+      }
+
+      .hamburger { display: flex; }
+      .nav-cv-btn span { display: none; }
+    }
+
+    /* =====================================================
+       SECTIONS COMMON
+    ===================================================== */
+    section {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--green);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .section-title span {
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-subtitle {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin-bottom: 3.5rem;
+    }
+
+    /* =====================================================
+       HERO SECTION
+    ===================================================== */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: var(--navbar-height);
+      max-width: 100%;
+    }
+
+    /* Particle Canvas */
+    #particle-canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 2rem;
+      width: 100%;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1rem;
+      background: rgba(108,92,231,0.12);
+      border: 1px solid rgba(108,92,231,0.3);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      color: var(--accent-light);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    .hero-name {
+      font-size: clamp(2.5rem, 7vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-name .highlight {
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-typing-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: clamp(1.2rem, 3vw, 1.75rem);
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      min-height: 2.5rem;
+    }
+
+    .hero-typing-prefix {
+      color: var(--green);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9em;
+    }
+
+    #typing-text {
+      color: var(--accent-light);
+    }
+
+    .cursor-blink {
+      display: inline-block;
+      width: 3px;
+      height: 1.1em;
+      background: var(--accent);
+      vertical-align: middle;
+      animation: blink 0.75s step-end infinite;
+      margin-left: 2px;
+      border-radius: 2px;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      background: var(--gradient-1);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all var(--transition);
+      box-shadow: 0 4px 20px rgba(108,92,231,0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 35px rgba(108,92,231,0.5);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all var(--transition);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent-light);
+      background: rgba(108,92,231,0.08);
+      transform: translateY(-2px);
+    }
+
+    /* CV Button — gradient border */
+    .btn-cv {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      background: var(--bg-primary);
+      color: var(--accent-light);
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      position: relative;
+      transition: all var(--transition);
+    }
+
+    .btn-cv::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background: var(--gradient-1);
+      border-radius: 14px;
+      z-index: -1;
+    }
+
+    .btn-cv:hover {
+      color: #fff;
+      background: rgba(108,92,231,0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(108,92,231,0.3);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: bounce 2s infinite;
+    }
+
+    .scroll-mouse {
+      width: 22px; height: 36px;
+      border: 2px solid var(--text-muted);
+      border-radius: 11px;
+      position: relative;
+    }
+
+    .scroll-mouse::after {
+      content: '';
+      position: absolute;
+      top: 5px; left: 50%;
+      transform: translateX(-50%);
+      width: 4px; height: 8px;
+      background: var(--accent);
+      border-radius: 2px;
+      animation: scroll-wheel 2s infinite;
+    }
+
+    @keyframes scroll-wheel {
+      0% { top: 5px; opacity: 1; }
+      100% { top: 18px; opacity: 0; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-8px); }
+    }
+
+    /* =====================================================
+       ABOUT SECTION
+    ===================================================== */
+    #about {
+      padding-top: 8rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-image-wrapper {
+      position: relative;
+    }
+
+    .about-avatar {
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 1;
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-avatar::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gradient-1);
+      opacity: 0.05;
+    }
+
+    .about-deco {
+      position: absolute;
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      filter: blur(40px);
+      opacity: 0.4;
+    }
+
+    .about-deco-1 {
+      background: var(--accent);
+      top: -20px; right: -20px;
+    }
+
+    .about-deco-2 {
+      background: var(--green);
+      bottom: -20px; left: -20px;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .stat-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .about-text p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .tag {
+      padding: 0.35rem 0.85rem;
+      background: rgba(108,92,231,0.1);
+      border: 1px solid rgba(108,92,231,0.25);
+      border-radius: 100px;
+      font-size: 0.82rem;
+      color: var(--accent-light);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-stats { grid-template-columns: repeat(3, 1fr); }
+      .about-avatar { max-width: 240px; font-size: 5rem; }
+    }
+
+    /* =====================================================
+       EXPERIENCE TIMELINE
+    ===================================================== */
+    #experience {
+      position: relative;
+    }
+
+    .timeline {
+      position: relative;
+      padding: 2rem 0;
+    }
+
+    /* Animated vertical line */
+    .timeline-track {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: var(--border);
+      overflow: hidden;
+    }
+
+    .timeline-track-fill {
+      width: 100%;
+      height: 0%;
+      background: var(--gradient-1);
+      transition: height 0.5s ease;
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr;
+      gap: 0;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-card {
+      grid-column: 1;
+      text-align: right;
+      margin-right: 30px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-spacer {
+      grid-column: 3;
+    }
+
+    .timeline-item:nth-child(even) .timeline-card {
+      grid-column: 3;
+      margin-left: 30px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-spacer {
+      grid-column: 1;
+    }
+
+    .timeline-dot-col {
+      grid-column: 2;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 1.5rem;
+    }
+
+    .timeline-dot {
+      width: 16px; height: 16px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 3px solid var(--bg-primary);
+      box-shadow: 0 0 0 3px var(--accent);
+      flex-shrink: 0;
+    }
+
+    .timeline-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .timeline-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease, border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .timeline-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
+      transform: translateY(-3px) !important;
+    }
+
+    .timeline-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.08em;
+    }
+
+    .timeline-role {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-company {
+      font-size: 0.9rem;
+      color: var(--accent-light);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .timeline-techs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1rem;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-techs {
+      justify-content: flex-end;
+    }
+
+    .tech-badge {
+      padding: 0.2rem 0.6rem;
+      background: rgba(0,206,201,0.1);
+      border: 1px solid rgba(0,206,201,0.2);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--green);
+    }
+
+    /* Mobile timeline */
+    @media (max-width: 768px) {
+      .timeline-track { left: 24px; }
+
+      .timeline-item {
+        grid-template-columns: 48px 1fr;
+        grid-template-rows: auto;
+      }
+
+      .timeline-dot-col {
+        grid-column: 1;
+        grid-row: 1;
+        padding-top: 1.5rem;
+        justify-content: center;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-card,
+      .timeline-item:nth-child(even) .timeline-card {
+        grid-column: 2;
+        grid-row: 1;
+        text-align: left;
+        margin: 0;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-techs,
+      .timeline-item:nth-child(even) .timeline-techs {
+        justify-content: flex-start;
+      }
+
+      .timeline-spacer { display: none; }
+    }
+
+    /* =====================================================
+       PROJECTS
+    ===================================================== */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
+      transform: translateY(-5px);
+    }
+
+    .project-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-img-ecommerce { background: linear-gradient(135deg, rgba(108,92,231,0.3), rgba(162,155,254,0.1)); }
+    .project-img-chat { background: linear-gradient(135deg, rgba(0,206,201,0.3), rgba(108,92,231,0.1)); }
+    .project-img-analytics { background: linear-gradient(135deg, rgba(162,155,254,0.2), rgba(0,206,201,0.2)); }
+
+    .project-body {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+
+    .project-techs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: all var(--transition);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent-light);
+      background: rgba(108,92,231,0.08);
+    }
+
+    .btn-detail {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff;
+      background: var(--gradient-1);
+      border: none;
+      border-radius: 8px;
+      transition: all var(--transition);
+      box-shadow: 0 2px 12px rgba(108,92,231,0.3);
+    }
+
+    .btn-detail:hover {
+      box-shadow: 0 4px 20px rgba(108,92,231,0.5);
+      transform: translateY(-1px);
+    }
+
+    /* =====================================================
+       SKILLS
+    ===================================================== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-category {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      transition: all var(--transition);
+    }
+
+    .skill-category:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
+    }
+
+    .skill-cat-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .skill-cat-icon {
+      font-size: 1.5rem;
+    }
+
+    .skill-cat-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .skill-item {
+      margin-bottom: 1rem;
+    }
+
+    .skill-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.4rem;
+    }
+
+    .skill-name { font-size: 0.88rem; font-weight: 500; }
+
+    .skill-pct {
+      font-size: 0.78rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent-light);
+    }
+
+    .skill-bar {
+      height: 6px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    [data-theme="light"] .skill-bar {
+      background: rgba(0,0,0,0.06);
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: var(--gradient-1);
+      width: 0%;
+      transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* =====================================================
+       CERTIFICATES
+    ===================================================== */
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .cert-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: all var(--transition);
+    }
+
+    .cert-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
+      transform: translateY(-4px);
+    }
+
+    .cert-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+    }
+
+    .cert-icon-aws { background: linear-gradient(135deg, rgba(255,153,0,0.15), rgba(255,153,0,0.05)); }
+    .cert-icon-google { background: linear-gradient(135deg, rgba(66,133,244,0.15), rgba(66,133,244,0.05)); }
+    .cert-icon-meta { background: linear-gradient(135deg, rgba(24,119,242,0.15), rgba(24,119,242,0.05)); }
+    .cert-icon-udemy { background: linear-gradient(135deg, rgba(168,0,253,0.15), rgba(168,0,253,0.05)); }
+
+    .cert-title {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .cert-issuer {
+      font-size: 0.85rem;
+      color: var(--accent-light);
+      font-weight: 500;
+    }
+
+    .cert-date {
+      font-size: 0.78rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-muted);
+      margin-top: auto;
+    }
+
+    .btn-cert {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--green);
+      border: 1px solid rgba(0,206,201,0.3);
+      border-radius: 8px;
+      background: rgba(0,206,201,0.05);
+      transition: all var(--transition);
+    }
+
+    .btn-cert:hover {
+      background: rgba(0,206,201,0.12);
+      border-color: var(--green);
+    }
+
+    /* =====================================================
+       TESTIMONIALS
+    ===================================================== */
+    #testimonials {
+      overflow: hidden;
+    }
+
+    .testimonials-wrapper {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .testimonials-slider {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+    }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      display: none;
+      flex-direction: column;
+      gap: 1.5rem;
+      transition: all var(--transition);
+    }
+
+    .testimonial-card.active {
+      display: flex;
+      animation: fadeSlide 0.5s ease;
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .testimonial-quote-icon {
+      font-size: 2.5rem;
+      line-height: 1;
+      color: var(--accent);
+      opacity: 0.4;
+    }
+
+    .testimonial-text {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: auto;
+    }
+
+    .testimonial-avatar {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--gradient-1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .testimonial-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .testimonial-role {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .testimonial-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      cursor: pointer;
+      transition: all var(--transition);
+      border: none;
+    }
+
+    .dot.active {
+      background: var(--accent);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* =====================================================
+       BLOG
+    ===================================================== */
+
+    /* =====================================================
+       CONTACT
+    ===================================================== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: all var(--transition);
+    }
+
+    .contact-item:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-icon {
+      width: 44px; height: 44px;
+      background: rgba(108,92,231,0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-value {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    /* Contact Form */
+    .contact-form {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      transition: all var(--transition);
+      resize: vertical;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(108,92,231,0.15);
+    }
+
+    .form-textarea { min-height: 140px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.95rem;
+      background: var(--gradient-1);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all var(--transition);
+      box-shadow: 0 4px 20px rgba(108,92,231,0.3);
+    }
+
+    .btn-submit:hover {
+      box-shadow: 0 8px 35px rgba(108,92,231,0.5);
+      transform: translateY(-1px);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .form-status {
+      margin-top: 1rem;
+      padding: 0.85rem 1rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: none;
+    }
+
+    .form-status.success {
+      background: rgba(0,206,201,0.1);
+      border: 1px solid rgba(0,206,201,0.3);
+      color: var(--green);
+      display: block;
+    }
+
+    .form-status.error {
+      background: rgba(255,80,80,0.1);
+      border: 1px solid rgba(255,80,80,0.3);
+      color: #ff5050;
+      display: block;
+    }
+
+    /* Spinner */
+    .spinner {
+      width: 18px; height: 18px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+    footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-copy {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .social-link {
+      width: 42px; height: 42px;
+      border-radius: 10px;
+      background: rgba(108,92,231,0.08);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      transition: all var(--transition);
+    }
+
+    .social-link:hover {
+      background: rgba(108,92,231,0.15);
+      border-color: var(--accent);
+      color: var(--accent-light);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 600px) {
+      .footer-inner { grid-template-columns: 1fr; text-align: center; }
+      .footer-socials { justify-content: center; }
+    }
+
+    /* =====================================================
+       BACK TO TOP
+    ===================================================== */
+    #back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 48px; height: 48px;
+      background: var(--gradient-1);
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(108,92,231,0.4);
+      z-index: 999;
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+      transition: all var(--transition);
+    }
+
+    #back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    #back-to-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(108,92,231,0.5);
+    }
+
+    /* =====================================================
+       MODAL
+    ===================================================== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(8px);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 720px;
+      max-height: 90vh;
+      overflow-y: auto;
+      transform: scale(0.9) translateY(20px);
+      transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    }
+
+    .modal-overlay.open .modal {
+      transform: scale(1) translateY(0);
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 1.75rem;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: var(--bg-secondary);
+      z-index: 1;
+    }
+
+    .modal-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .modal-close {
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition);
+    }
+
+    .modal-close:hover {
+      background: rgba(255,80,80,0.1);
+      border-color: rgba(255,80,80,0.3);
+      color: #ff5050;
+    }
+
+    .modal-body {
+      padding: 1.75rem;
+    }
+
+    .modal-screenshot {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-section-title {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .modal-section-title:first-of-type { margin-top: 0; }
+
+    .modal-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .modal-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .modal-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .modal-features li::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .modal-tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .modal-links {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    /* =====================================================
+       SCROLL ANIMATIONS
+    ===================================================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* =====================================================
+       UTILITY
+    ===================================================== */
+    .text-gradient {
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .divider {
+      width: 60px; height: 4px;
+      background: var(--gradient-1);
+      border-radius: 2px;
+      margin: 0 0 1.5rem 0;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent-light); }
+
+    /* Selection */
+    ::selection { background: rgba(108,92,231,0.35); color: #fff; }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- =====================================================
+       NAVBAR
+  ===================================================== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">&lt;adilnas.dev/&gt;</a>
+
+      <!-- Mobile overlay -->
+      <div class="nav-overlay" id="nav-overlay"></div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">Hakkımda</a></li>
+        <li><a href="#experience">Deneyim</a></li>
+        <li><a href="#projects">Projeler</a></li>
+        <li><a href="#skills">Beceriler</a></li>
+        <li><a href="#certificates">Sertifikalar</a></li>
+        <li><a href="#contact">İletişim</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="cv/Adil-NAS-CV.pdf" download="Adil-NAS-CV.pdf" class="nav-cv-btn">
+          <span>&#8595;</span>
+          <span>CV</span>
+        </a>
+        <button id="theme-toggle" aria-label="Tema değiştir">&#9790;</button>
+        <button id="lang-toggle" aria-label="Dili değiştir" title="Switch language">EN</button>
+        <button class="hamburger" id="hamburger" aria-label="Menü">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =====================================================
+       HERO
+  ===================================================== -->
+  <section id="hero">
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="hero-content">
+      <div class="hero-badge">Merhaba, ben</div>
+
+      <h1 class="hero-name">
+        <span class="highlight">Adil NAS</span>
+      </h1>
+
+      <div class="hero-typing-wrapper">
+        <span class="hero-typing-prefix">// </span>
+        <span id="typing-text"></span>
+        <span class="cursor-blink"></span>
+      </div>
+
+      <p class="hero-desc">
+        Robotik ve yapay zekanın kesişiminde yazılım geliştiriyorum. ROS2, SLAM ve otonom sistemler üzerine çalışıyor; makine öğrenmesini gerçek dünya problemlerine uygulamaktan keyif alıyorum.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn-primary">
+          <span>&#128196;</span> Projelerimi Gör
+        </a>
+        <a href="#contact" class="btn-outline">
+          <span>&#128140;</span> İletişime Geç
+        </a>
+        <a href="cv/Adil-NAS-CV.pdf" download="Adil-NAS-CV.pdf" class="btn-cv">
+          <span>&#8595;</span> CV İndir
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="scroll-mouse"></div>
+      <span>Kaydır</span>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       ABOUT
+  ===================================================== -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-image-wrapper">
+        <div class="about-avatar">
+          👨‍💻
+          <div class="about-deco about-deco-1"></div>
+          <div class="about-deco about-deco-2"></div>
+        </div>
+        <div class="about-stats">
+          <div class="stat-item reveal">
+            <div class="stat-number">2+</div>
+            <div class="stat-label">Yıl Deneyim</div>
+          </div>
+          <div class="stat-item reveal reveal-delay-1">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Proje</div>
+          </div>
+          <div class="stat-item reveal reveal-delay-2">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Yayın</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <div class="section-label">// hakkımda</div>
+        <h2 class="section-title">Merhaba! Ben <span>Adil NAS</span></h2>
+        <div class="divider"></div>
+        <p>
+          Bilgisayar Mühendisi (YZ & Robotik), lisansımı onur derecesiyle tamamladım. Sivas Cumhuriyet Üniversitesi'nde Bilgisayar Mühendisliği alanında Yüksek Lisans yapıyorum. Yazılım geliştirme, robotik ve otonom sistemlere duyduğum tutkuyla sürekli yeni teknolojiler öğrenmeye çalışıyorum.
+        </p>
+        <p>
+          Teknofest "Sanayide Dijital Teknolojiler" yarışmasında (İleri Kategori) üniversite ekibimi yönettim; otonom robotumuzla Türkiye 2.'si olduk. Projenin tüm ROS2 yazılımını, SLAM ve otonom navigasyon sistemlerini geliştirdim.
+        </p>
+        <p>
+          Samsung Innovation Campus'ta Yapay Zeka eğitimi tamamladım. Makine Öğrenmesi, Derin Öğrenme ve LLM orkestrasyon araçları (Ollama, CrewAI, LangChain) konularında kapsamlı deneyim kazandım.
+        </p>
+        <div class="about-tags">
+          <span class="tag">C++</span>
+          <span class="tag">Python</span>
+          <span class="tag">ROS2</span>
+          <span class="tag">React</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">Docker</span>
+          <span class="tag">SLAM</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       EXPERIENCE TIMELINE
+  ===================================================== -->
+  <section id="experience">
+    <div class="section-label">// deneyim</div>
+    <h2 class="section-title">Kariyer <span>Yolculuğum</span></h2>
+    <p class="section-subtitle">Profesyonel deneyimlerim ve büyük projelerde edindiğim kazanımlar.</p>
+
+    <div class="timeline">
+      <div class="timeline-track">
+        <div class="timeline-track-fill" id="timeline-fill"></div>
+      </div>
+
+      <!-- Item 1 -->
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <div class="timeline-date">Haziran 2025 — Günümüz</div>
+          <div class="timeline-role">AI Trainee</div>
+          <div class="timeline-company">Samsung Innovation Campus</div>
+          <div class="timeline-desc">
+            Makine Öğrenmesi ve Derin Öğrenme temelleri üzerine kapsamlı eğitim tamamladım. Veri analizi, model oluşturma ve değerlendirme görevleri için Python kullandım. Ollama, CrewAI ve LangChain dahil LLM orkestrasyon araçlarıyla deneyim kazandım. Program kapsamında uçtan uca bir yapay zeka projesi geliştirip sundum.
+          </div>
+          <div class="timeline-techs">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">Machine Learning</span>
+            <span class="tech-badge">LangChain</span>
+            <span class="tech-badge">CrewAI</span>
+          </div>
+        </div>
+        <div class="timeline-dot-col">
+          <div class="timeline-dot"></div>
+        </div>
+        <div class="timeline-spacer"></div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="timeline-item">
+        <div class="timeline-spacer"></div>
+        <div class="timeline-dot-col">
+          <div class="timeline-dot"></div>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-date">Eylül 2024 — Haziran 2025</div>
+          <div class="timeline-role">Robotics & AI Team Lead</div>
+          <div class="timeline-company">Teknofest — Sanayide Dijital Teknolojiler</div>
+          <div class="timeline-desc">
+            Teknofest yarışmasında (İleri Kategori) Türkiye 2.'si olan otonom robotu geliştirdim. SLAM Toolbox ve Nav2 dahil tüm ROS2 tabanlı yazılımı, sensör entegrasyonunu ve otonom navigasyon sistemini implemente ettim. Projenin yaklaşık %90'ından sorumluydum; donanım ve elektroniğe de katkıda bulundum.
+          </div>
+          <div class="timeline-techs">
+            <span class="tech-badge">ROS2</span>
+            <span class="tech-badge">SLAM Toolbox</span>
+            <span class="tech-badge">Nav2</span>
+            <span class="tech-badge">Python / C++</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <div class="timeline-date">Temmuz — Ağustos 2024</div>
+          <div class="timeline-role">Software Intern</div>
+          <div class="timeline-company">C-Prot — Mersin</div>
+          <div class="timeline-desc">
+            C++ ile dosya arama ve kötü amaçlı yazılım tespit algoritmaları geliştirdim. Dosyalardaki sertifika tarama üzerine odaklanan bir proje oluşturdum. Tauri ortamında Svelte ve Rust kullanarak tam yığın masaüstü uygulaması geliştirdim.
+          </div>
+          <div class="timeline-techs">
+            <span class="tech-badge">C++</span>
+            <span class="tech-badge">Rust</span>
+            <span class="tech-badge">Svelte</span>
+            <span class="tech-badge">Tauri</span>
+          </div>
+        </div>
+        <div class="timeline-dot-col">
+          <div class="timeline-dot"></div>
+        </div>
+        <div class="timeline-spacer"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       PROJECTS
+  ===================================================== -->
+  <section id="projects">
+    <div class="section-label">// projeler</div>
+    <h2 class="section-title">Öne Çıkan <span>Projeler</span></h2>
+    <p class="section-subtitle">Gerçek problemlere gerçek çözümler. İşte en çok gurur duyduğum projelerim.</p>
+
+    <div class="projects-grid">
+      <!-- Project 1: AGV -->
+      <div class="project-card reveal">
+        <div class="project-img project-img-ecommerce">🤖</div>
+        <div class="project-body">
+          <h3 class="project-title">AGV — Doğal Navigasyon & Haritalama</h3>
+          <p class="project-desc">
+            Raspberry Pi 4/5 ve ROS2 Humble ile geliştirilen otonom güdümlü araç. SLAM tabanlı haritalama, engel kaçınma ve kısıtlı bölge tespiti özellikleri içeriyor. Teknofest'te Türkiye 2.'si.
+          </p>
+          <div class="project-techs">
+            <span class="tech-badge">ROS2</span>
+            <span class="tech-badge">SLAM Toolbox</span>
+            <span class="tech-badge">Nav2</span>
+            <span class="tech-badge">Raspberry Pi 4/5</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Adilnasceng" target="_blank" rel="noopener" class="btn-ghost">&#128279; GitHub</a>
+            <button class="btn-detail" onclick="openModal('agv')">&#128269; Detaylar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Line Following Robot -->
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-img project-img-chat">🚗</div>
+        <div class="project-body">
+          <h3 class="project-title">Otonom Çizgi Takip Eden Robot</h3>
+          <p class="project-desc">
+            Raspberry Pi 4/5 ve kamera ile kara çizgiyi takip eden mobil robot. Roboflow ile eğitilmiş ML modeli sayesinde çizgi ayrışmalarını tespit ederek yön belirliyor.
+          </p>
+          <div class="project-techs">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">Raspberry Pi 4/5</span>
+            <span class="tech-badge">OpenCV</span>
+            <span class="tech-badge">Roboflow</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Adilnasceng" target="_blank" rel="noopener" class="btn-ghost">&#128279; GitHub</a>
+            <button class="btn-detail" onclick="openModal('linerobot')">&#128269; Detaylar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: C-Prot Desktop App -->
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-img project-img-analytics">🛡️</div>
+        <div class="project-body">
+          <h3 class="project-title">Güvenlik Analiz Masaüstü Uygulaması</h3>
+          <p class="project-desc">
+            C-Prot stajında Tauri + Svelte + Rust ile geliştirilen tam yığın masaüstü uygulaması. Dosya arama, kötü amaçlı yazılım tespiti ve sertifika tarama algoritmaları içeriyor.
+          </p>
+          <div class="project-techs">
+            <span class="tech-badge">Rust</span>
+            <span class="tech-badge">Svelte</span>
+            <span class="tech-badge">Tauri</span>
+            <span class="tech-badge">C++</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Adilnasceng" target="_blank" rel="noopener" class="btn-ghost">&#128279; GitHub</a>
+            <button class="btn-detail" onclick="openModal('secapp')">&#128269; Detaylar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       SKILLS
+  ===================================================== -->
+  <section id="skills">
+    <div class="section-label">// beceriler</div>
+    <h2 class="section-title">Teknoloji <span>Stackim</span></h2>
+    <p class="section-subtitle">Yıllar içinde ustalık kazandığım araçlar ve teknolojiler.</p>
+
+    <div class="skills-grid">
+      <div class="skill-category reveal">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">💻</div>
+          <div class="skill-cat-title">Yazılım Geliştirme</div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-meta"><span class="skill-name">C++ / Python</span><span class="skill-pct">88%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-pct="88"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-meta"><span class="skill-name">React / Node.js</span><span class="skill-pct">80%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-pct="80"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-meta"><span class="skill-name">Svelte / Tauri / Rust</span><span class="skill-pct">70%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-pct="70"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-meta"><span class="skill-name">SQL / Flask</span><span class="skill-pct">72%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-pct="72"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-category reveal reveal-delay-1">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">🤖</div>
+          <div class="skill-cat-title">Robotik & Gömülü</div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-meta"><span class="skill-name">ROS2 (Nav2, SLAM)</span><span class="skill-pct">90%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-pct="90"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-meta"><span class="skill-name">OpenCV / Sensör Füzyon</span><span class="skill-pct">85%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-pct="85"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-meta"><span class="skill-name">Arduino / RPi 4-5 / Jetson</span><span class="skill-pct">88%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-pct="88"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-meta"><span class="skill-name">Jetson / LIDAR</span><span class="skill-pct">72%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-pct="72"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-category reveal reveal-delay-2">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">🧠</div>
+          <div class="skill-cat-title">DevOps & AI Araçlar</div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-meta"><span class="skill-name">Git / Docker / Linux</span><span class="skill-pct">88%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-pct="88"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-meta"><span class="skill-name">LangChain / CrewAI</span><span class="skill-pct">75%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-pct="75"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-meta"><span class="skill-name">Ollama / LLM Tools</span><span class="skill-pct">72%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-pct="72"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-meta"><span class="skill-name">ML / Deep Learning</span><span class="skill-pct">70%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-pct="72"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       CERTIFICATES
+  ===================================================== -->
+  <section id="certificates">
+    <div class="section-label">// sertifikalar</div>
+    <h2 class="section-title">Aldığım <span>Sertifikalar</span></h2>
+    <p class="section-subtitle">Sürekli öğrenme yolculuğumda edindiğim uluslararası sertifikalar.</p>
+
+    <div class="certs-grid">
+      <div class="cert-card reveal">
+        <div class="cert-icon cert-icon-aws">🤖</div>
+        <div>
+          <div class="cert-title">ROS2 İleri Seviye — Modelleme, Nav2 & SLAM</div>
+          <div class="cert-issuer">Udemy</div>
+        </div>
+        <div class="cert-date">📅 Tem 2025</div>
+        <a href="certs/ros2.jpg" target="_blank" rel="noopener" class="btn-cert">&#128279; Görüntüle</a>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-1">
+        <div class="cert-icon cert-icon-google">🏆</div>
+        <div>
+          <div class="cert-title">Samsung Innovation Campus — AI</div>
+          <div class="cert-issuer">Samsung Electronics</div>
+        </div>
+        <div class="cert-date">📅 Eki 2025</div>
+        <a href="certs/samsung.jpg" target="_blank" rel="noopener" class="btn-cert">&#128279; Görüntüle</a>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-2">
+        <div class="cert-icon cert-icon-meta">🥈</div>
+        <div>
+          <div class="cert-title">Sanayide Dijital Teknolojiler — 2.lik</div>
+          <div class="cert-issuer">TEKNOFEST</div>
+        </div>
+        <div class="cert-date">📅 Kas 2025</div>
+        <a href="certs/ikincilik.jpg" target="_blank" rel="noopener" class="btn-cert">&#128279; Görüntüle</a>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-3">
+        <div class="cert-icon cert-icon-udemy">🎯</div>
+        <div>
+          <div class="cert-title">Sanayide Dijital Teknolojiler — Finalist</div>
+          <div class="cert-issuer">TEKNOFEST</div>
+        </div>
+        <div class="cert-date">📅 Kas 2025</div>
+        <a href="certs/finalist.jpg" target="_blank" rel="noopener" class="btn-cert">&#128279; Görüntüle</a>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-1">
+        <div class="cert-icon cert-icon-google">🛡️</div>
+        <div>
+          <div class="cert-title">Veri Tabanı Saldırıları ve Güvenliği</div>
+          <div class="cert-issuer">BTK Akademi</div>
+        </div>
+        <div class="cert-date">📅 Haz 2024</div>
+        <a href="certs/veritabani.jpg" target="_blank" rel="noopener" class="btn-cert">&#128279; Görüntüle</a>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-2">
+        <div class="cert-icon cert-icon-aws">⚙️</div>
+        <div>
+          <div class="cert-title">Versiyon Kontrolleri: Git ve GitHub</div>
+          <div class="cert-issuer">BTK Akademi</div>
+        </div>
+        <div class="cert-date">📅 Ağu 2024</div>
+        <a href="certs/git.jpg" target="_blank" rel="noopener" class="btn-cert">&#128279; Görüntüle</a>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-3">
+        <div class="cert-icon cert-icon-meta">☕</div>
+        <div>
+          <div class="cert-title">Java ile Backend Web Development</div>
+          <div class="cert-issuer">Patika.dev</div>
+        </div>
+        <div class="cert-date">📅 Kas 2023</div>
+        <a href="certs/java.jpg" target="_blank" rel="noopener" class="btn-cert">&#128279; Görüntüle</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       TESTIMONIALS
+  ===================================================== -->
+  <section id="testimonials">
+    <div class="section-label">// referanslar</div>
+    <h2 class="section-title">Ne Diyorlar <span>Benim İçin?</span></h2>
+    <p class="section-subtitle">Birlikte çalıştığım insanların değerli görüşleri.</p>
+
+    <div class="testimonials-wrapper">
+      <div class="testimonials-slider">
+
+        <div class="testimonial-card active" data-index="0">
+          <div class="testimonial-quote-icon">"</div>
+          <div class="testimonial-text">
+            Adil ile otonom mobil robot projesinde birlikte çalışma fırsatı buldum. ROS 2 tabanlı robot yazılımı, sensör entegrasyonu ve robot navigasyonu konularında oldukça yetkin biri. Problemlere analitik yaklaşımı ve çözüm üretmedeki hızı, onu ekip ortamlarında değerli bir katkı sağlayıcı kılıyor. Adil'in disiplinli çalışma anlayışı ve yeni teknolojileri hızla öğrenip adapte olabilme yeteneği sayesinde projelerimizde önemli ilerlemeler kaydettik. Robotik ve yapay zeka alanlarında büyük işler başaracağına kesinlikle inanıyorum.
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MFK</div>
+            <div>
+              <div class="testimonial-name">Mehmet Furkan Kaya</div>
+              <div class="testimonial-role">Software Engineer @ Yapı Kredi Teknoloji (via Metasis)</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="testimonial-dots">
+        <button class="dot active" data-dot="0" aria-label="Referans 1"></button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       CONTACT
+  ===================================================== -->
+  <section id="contact">
+    <div class="section-label">// iletişim</div>
+    <h2 class="section-title">Bir Şeyler <span>Yapalım!</span></h2>
+    <p class="section-subtitle">Proje fikrinizi tartışmak veya sadece merhaba demek için bana ulaşın.</p>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <a href="mailto:adilnasceng@gmail.com" class="contact-item reveal" style="text-decoration:none;color:inherit;">
+          <div class="contact-icon">📧</div>
+          <div>
+            <div class="contact-label">E-posta</div>
+            <div class="contact-value">adilnasceng@gmail.com</div>
+          </div>
+        </a>
+        <div class="contact-item reveal reveal-delay-1">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Konum</div>
+            <div class="contact-value">Mersin, Türkiye</div>
+          </div>
+        </div>
+        <a href="https://github.com/Adilnasceng" target="_blank" rel="noopener" class="contact-item reveal reveal-delay-2" style="text-decoration:none;color:inherit;">
+          <div class="contact-icon">🐙</div>
+          <div>
+            <div class="contact-label">GitHub</div>
+            <div class="contact-value">github.com/Adilnasceng</div>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/adilnas/" target="_blank" rel="noopener" class="contact-item reveal reveal-delay-3" style="text-decoration:none;color:inherit;">
+          <div class="contact-icon">💼</div>
+          <div>
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">linkedin.com/in/adilnas</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="contact-form reveal">
+        <form id="contact-form" action="https://formspree.io/f/mbdzwvzn" method="POST" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="name">Ad Soyad</label>
+              <input class="form-input" id="name" name="name" type="text" placeholder="Adınız Soyadınız" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">E-posta</label>
+              <input class="form-input" id="email" name="email" type="email" placeholder="ornek@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="subject">Konu</label>
+            <input class="form-input" id="subject" name="subject" type="text" placeholder="Projeniz hakkında..." />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Mesajınız</label>
+            <textarea class="form-textarea" id="message" name="message" placeholder="Merhaba! Bir projem var..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit" id="submit-btn">
+            <span id="submit-text">Mesaj Gönder ✉️</span>
+            <div class="spinner" id="submit-spinner"></div>
+          </button>
+          <div class="form-status" id="form-status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       FOOTER
+  ===================================================== -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">&lt;adilnas.dev /&gt;</div>
+        <div class="footer-copy">
+          © 2025 Adil NAS. Sevgiyle &amp; Kahveyle yapıldı ☕
+        </div>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/Adilnasceng" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">⌥</a>
+        <a href="https://www.linkedin.com/in/adilnas/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">in</a>
+        <a href="mailto:adilnasceng@gmail.com" class="social-link" aria-label="Email">@</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================
+       BACK TO TOP
+  ===================================================== -->
+  <button id="back-to-top" aria-label="Yukarı çık">&#8593;</button>
+
+  <!-- =====================================================
+       MODALS
+  ===================================================== -->
+
+  <!-- AGV Modal -->
+  <div class="modal-overlay" id="modal-agv" role="dialog" aria-modal="true" aria-label="AGV Proje Detayları">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title">🤖 AGV — Doğal Navigasyon & Haritalama</div>
+        <button class="modal-close" onclick="closeModal('agv')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-screenshot">🤖</div>
+        <div class="modal-section-title">Proje Hakkında</div>
+        <p class="modal-desc">Raspberry Pi 4/5 ve ROS2 Humble (Ubuntu) ile geliştirilen otonom güdümlü araç. SLAM tabanlı haritalama, engel kaçınma ve LIDAR kullanan kısıtlı/düşük hız bölgesi tespiti özellikleri içeriyor. Teknofest "Sanayide Dijital Teknolojiler" yarışmasında (İleri Kategori) Türkiye 2.'si oldu.</p>
+
+        <div class="modal-section-title">Özellikler</div>
+        <ul class="modal-features">
+          <li>SLAM tabanlı ortam haritalama (SLAM Toolbox)</li>
+          <li>Otonom navigasyon ve rota planlama (Nav2)</li>
+          <li>LIDAR ile engel kaçınma ve bölge tespiti</li>
+          <li>Raspberry Pi ↔ Arduino motor kontrolü ve enkoder geri bildirimi</li>
+          <li>IMU sensör veri işleme ve füzyonu</li>
+          <li>URDF robot modeli tasarımı</li>
+          <li>Fabrika lojistiği senaryoları için navigasyon</li>
+        </ul>
+
+        <div class="modal-section-title">Teknoloji Stack</div>
+        <div class="modal-tech-stack">
+          <span class="tech-badge">ROS2 Humble</span>
+          <span class="tech-badge">SLAM Toolbox</span>
+          <span class="tech-badge">Nav2</span>
+          <span class="tech-badge">Python / C++</span>
+          <span class="tech-badge">Raspberry Pi 4/5</span>
+          <span class="tech-badge">Arduino</span>
+          <span class="tech-badge">LIDAR</span>
+          <span class="tech-badge">Ubuntu</span>
+        </div>
+
+        <div class="modal-links">
+          <a href="https://github.com/Adilnasceng/teknofest-agv" target="_blank" rel="noopener" class="btn-ghost">&#128279; GitHub'da Gör</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Line Following Robot Modal -->
+  <div class="modal-overlay" id="modal-linerobot" role="dialog" aria-modal="true" aria-label="Çizgi Takip Robot Proje Detayları">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title">🚗 Otonom Çizgi Takip Eden Robot</div>
+        <button class="modal-close" onclick="closeModal('linerobot')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-screenshot">🚗</div>
+        <div class="modal-section-title">Proje Hakkında</div>
+        <p class="modal-desc">Raspberry Pi 4/5 ve onboard kamera kullanılarak kara çizgiyi takip eden mobil robot. Roboflow ile eğitilmiş makine öğrenmesi modeli sayesinde çizgi ayrışmalarını tespit ederek yön belirliyor. Özel motor sürücü devresi ve GPIO ile DC motor kontrolü sağlandı.</p>
+
+        <div class="modal-section-title">Özellikler</div>
+        <ul class="modal-features">
+          <li>Kamera tabanlı gerçek zamanlı çizgi takibi</li>
+          <li>Roboflow ile çizgi ayrışma tespiti (ML modeli)</li>
+          <li>GPIO ile özel motor sürücü devresi kontrolü</li>
+          <li>DC motor hız ve yön kontrolü</li>
+          <li>Gömülü sistemler ve hareket algoritmaları deneyimi</li>
+        </ul>
+
+        <div class="modal-section-title">Teknoloji Stack</div>
+        <div class="modal-tech-stack">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">Raspberry Pi 4/5</span>
+          <span class="tech-badge">OpenCV</span>
+          <span class="tech-badge">Roboflow</span>
+          <span class="tech-badge">GPIO</span>
+          <span class="tech-badge">Machine Learning</span>
+        </div>
+
+        <div class="modal-links">
+          <a href="https://github.com/Adilnasceng/Line-follower" target="_blank" rel="noopener" class="btn-ghost">&#128279; GitHub'da Gör</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Security App Modal -->
+  <div class="modal-overlay" id="modal-secapp" role="dialog" aria-modal="true" aria-label="Güvenlik Uygulaması Proje Detayları">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title">🛡️ Güvenlik Analiz Masaüstü Uygulaması</div>
+        <button class="modal-close" onclick="closeModal('secapp')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-screenshot">🛡️</div>
+        <div class="modal-section-title">Proje Hakkında</div>
+        <p class="modal-desc">C-Prot stajında geliştirilen tam yığın masaüstü güvenlik uygulaması. Tauri + Svelte (frontend) ve Rust + C++ (backend) mimarisiyle inşa edildi. Dosya arama, kötü amaçlı yazılım tespiti ve sertifika tarama özellikleri sunuyor.</p>
+
+        <div class="modal-section-title">Özellikler</div>
+        <ul class="modal-features">
+          <li>C++ ile gelişmiş dosya arama algoritması</li>
+          <li>Kötü amaçlı yazılım tespit motoru</li>
+          <li>Dosyalardaki sertifika tarama ve doğrulama</li>
+          <li>Svelte ile modern ve hızlı kullanıcı arayüzü</li>
+          <li>Rust backend ile yüksek performanslı işlemler</li>
+          <li>Tauri ile çapraz platform masaüstü dağıtımı</li>
+        </ul>
+
+        <div class="modal-section-title">Teknoloji Stack</div>
+        <div class="modal-tech-stack">
+          <span class="tech-badge">C++</span>
+          <span class="tech-badge">Rust</span>
+          <span class="tech-badge">Svelte</span>
+          <span class="tech-badge">Tauri</span>
+          <span class="tech-badge">JavaScript</span>
+        </div>
+
+        <div class="modal-links">
+          <a href="https://github.com/Adilnasceng/Digital-signature-verifier" target="_blank" rel="noopener" class="btn-ghost">&#128279; GitHub'da Gör</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ===================================================== -->
+  <script>
+    /* =====================================================
+       THEME SYSTEM
+    ===================================================== */
+    (function() {
+      const saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+      updateThemeIcon(saved);
+    })();
+
+    function updateThemeIcon(theme) {
+      const btn = document.getElementById('theme-toggle');
+      if (btn) btn.innerHTML = theme === 'dark' ? '&#9790;' : '&#9728;';
+    }
+
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateThemeIcon(next);
+    });
+
+    /* =====================================================
+       CUSTOM CURSOR
+    ===================================================== */
+    (function() {
+      if (window.matchMedia('(pointer: coarse)').matches) return;
+
+      const dot = document.getElementById('cursor-dot');
+      const ring = document.getElementById('cursor-ring');
+      let ringX = 0, ringY = 0;
+      let dotX = 0, dotY = 0;
+      let raf;
+
+      document.addEventListener('mousemove', function(e) {
+        dotX = e.clientX;
+        dotY = e.clientY;
+      });
+
+      function animate() {
+        ringX += (dotX - ringX) * 0.12;
+        ringY += (dotY - ringY) * 0.12;
+        dot.style.left = dotX + 'px';
+        dot.style.top = dotY + 'px';
+        ring.style.left = ringX + 'px';
+        ring.style.top = ringY + 'px';
+        raf = requestAnimationFrame(animate);
+      }
+      animate();
+
+      const hoverEls = 'a, button, [role="button"], .project-card, .cert-card, .dot, .skill-category';
+
+      document.addEventListener('mouseover', function(e) {
+        if (e.target.closest(hoverEls)) ring.classList.add('hover');
+      });
+
+      document.addEventListener('mouseout', function(e) {
+        if (e.target.closest(hoverEls)) ring.classList.remove('hover');
+      });
+
+      document.addEventListener('mouseleave', function() {
+        dot.style.opacity = '0';
+        ring.style.opacity = '0';
+      });
+      document.addEventListener('mouseenter', function() {
+        dot.style.opacity = '1';
+        ring.style.opacity = '1';
+      });
+    })();
+
+    /* =====================================================
+       PARTICLE CANVAS BACKGROUND
+    ===================================================== */
+    (function() {
+      const canvas = document.getElementById('particle-canvas');
+      const ctx = canvas.getContext('2d');
+      let W, H, particles, animId;
+
+      const PARTICLE_COUNT = 70;
+      const MAX_DIST = 130;
+      const COLORS = ['#6c5ce7', '#a29bfe', '#00cec9'];
+
+      function resize() {
+        W = canvas.width = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+      }
+
+      function createParticle() {
+        return {
+          x: Math.random() * W,
+          y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          r: Math.random() * 2.5 + 1.5,
+          color: COLORS[Math.floor(Math.random() * COLORS.length)],
+          alpha: Math.random() * 0.5 + 0.2
+        };
+      }
+
+      function init() {
+        resize();
+        particles = Array.from({ length: PARTICLE_COUNT }, createParticle);
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0 || p.x > W) p.vx *= -1;
+          if (p.y < 0 || p.y > H) p.vy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = p.color;
+          ctx.globalAlpha = p.alpha;
+          ctx.fill();
+
+          for (let j = i + 1; j < particles.length; j++) {
+            const q = particles[j];
+            const dx = p.x - q.x;
+            const dy = p.y - q.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < MAX_DIST) {
+              const opacity = (1 - dist / MAX_DIST) * 0.18;
+              ctx.globalAlpha = opacity;
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(q.x, q.y);
+              ctx.strokeStyle = '#6c5ce7';
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+        }
+        ctx.globalAlpha = 1;
+        animId = requestAnimationFrame(draw);
+      }
+
+      init();
+      draw();
+
+      window.addEventListener('resize', function() {
+        cancelAnimationFrame(animId);
+        init();
+        draw();
+      });
+    })();
+
+    /* =====================================================
+       TYPING EFFECT
+    ===================================================== */
+    (function() {
+      const texts = [
+        'Computer Engineer',
+        'AI & Robotics',
+        'ROS2 Developer',
+        'Problem Solver'
+      ];
+      const el = document.getElementById('typing-text');
+      let textIndex = 0;
+      let charIndex = 0;
+      let deleting = false;
+      let pause = false;
+
+      function type() {
+        if (pause) {
+          setTimeout(type, 1500);
+          pause = false;
+          return;
+        }
+        const current = texts[textIndex];
+        if (!deleting) {
+          el.textContent = current.substring(0, charIndex + 1);
+          charIndex++;
+          if (charIndex === current.length) {
+            pause = true;
+            deleting = true;
+            setTimeout(type, 1800);
+            return;
+          }
+          setTimeout(type, 90);
+        } else {
+          el.textContent = current.substring(0, charIndex - 1);
+          charIndex--;
+          if (charIndex === 0) {
+            deleting = false;
+            textIndex = (textIndex + 1) % texts.length;
+            setTimeout(type, 400);
+            return;
+          }
+          setTimeout(type, 50);
+        }
+      }
+      type();
+    })();
+
+    /* =====================================================
+       SCROLL PROGRESS BAR
+    ===================================================== */
+    (function() {
+      const bar = document.getElementById('scroll-progress');
+      function update() {
+        const scrollTop = window.scrollY;
+        const docH = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = docH > 0 ? (scrollTop / docH) * 100 : 0;
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+    })();
+
+    /* =====================================================
+       ACTIVE NAV HIGHLIGHTING (IntersectionObserver)
+    ===================================================== */
+    (function() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-links a');
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            navLinks.forEach(function(link) {
+              link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+            });
+          }
+        });
+      }, { threshold: 0.3, rootMargin: '-70px 0px -30% 0px' });
+
+      sections.forEach(function(s) { observer.observe(s); });
+    })();
+
+    /* =====================================================
+       HAMBURGER MENU
+    ===================================================== */
+    (function() {
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('nav-links');
+      const overlay = document.getElementById('nav-overlay');
+
+      function toggleMenu(open) {
+        hamburger.classList.toggle('open', open);
+        navLinks.classList.toggle('open', open);
+        overlay.classList.toggle('show', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+
+      hamburger.addEventListener('click', function() {
+        toggleMenu(!hamburger.classList.contains('open'));
+      });
+
+      overlay.addEventListener('click', function() { toggleMenu(false); });
+
+      navLinks.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() { toggleMenu(false); });
+      });
+    })();
+
+    /* =====================================================
+       SCROLL REVEAL ANIMATION
+    ===================================================== */
+    (function() {
+      const els = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function(el) { observer.observe(el); });
+    })();
+
+    /* =====================================================
+       SKILL BARS ANIMATION
+    ===================================================== */
+    (function() {
+      const bars = document.querySelectorAll('.skill-bar-fill');
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            const pct = entry.target.getAttribute('data-pct');
+            entry.target.style.width = pct + '%';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      bars.forEach(function(bar) { observer.observe(bar); });
+    })();
+
+    /* =====================================================
+       TIMELINE SCROLL FILL
+    ===================================================== */
+    (function() {
+      const fill = document.getElementById('timeline-fill');
+      const timeline = document.querySelector('.timeline');
+      const cards = document.querySelectorAll('.timeline-card');
+
+      if (!timeline) return;
+
+      const cardObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.2 });
+
+      cards.forEach(function(c) { cardObserver.observe(c); });
+
+      function updateFill() {
+        const rect = timeline.getBoundingClientRect();
+        const viewH = window.innerHeight;
+        const total = rect.height;
+        const visible = viewH - rect.top;
+        const pct = Math.min(100, Math.max(0, (visible / total) * 100));
+        if (fill) fill.style.height = pct + '%';
+      }
+
+      window.addEventListener('scroll', updateFill, { passive: true });
+      updateFill();
+    })();
+
+    /* =====================================================
+       TESTIMONIALS SLIDER
+    ===================================================== */
+    (function() {
+      const cards = document.querySelectorAll('.testimonial-card');
+      const dots = document.querySelectorAll('.dot');
+      let current = 0;
+      let timer;
+
+      function goTo(index) {
+        cards[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (index + cards.length) % cards.length;
+        cards[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+
+      function next() { goTo(current + 1); }
+
+      function startAuto() {
+        clearInterval(timer);
+        timer = setInterval(next, 5000);
+      }
+
+      dots.forEach(function(dot, i) {
+        dot.addEventListener('click', function() {
+          goTo(i);
+          startAuto();
+        });
+      });
+
+      startAuto();
+    })();
+
+    /* =====================================================
+       PROJECT MODALS
+    ===================================================== */
+    function openModal(id) {
+      const overlay = document.getElementById('modal-' + id);
+      if (!overlay) return;
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      overlay.focus();
+    }
+
+    function closeModal(id) {
+      const overlay = document.getElementById('modal-' + id);
+      if (!overlay) return;
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Click outside to close
+    document.querySelectorAll('.modal-overlay').forEach(function(overlay) {
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) {
+          overlay.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
+    // ESC key to close
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.open').forEach(function(overlay) {
+          overlay.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      }
+    });
+
+    /* =====================================================
+       CONTACT FORM (Formspree + fetch)
+    ===================================================== */
+    (function() {
+      const form = document.getElementById('contact-form');
+      const submitBtn = document.getElementById('submit-btn');
+      const submitText = document.getElementById('submit-text');
+      const spinner = document.getElementById('submit-spinner');
+      const statusEl = document.getElementById('form-status');
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Basic validation
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const message = form.message.value.trim();
+
+        if (!name || !email || !message) {
+          statusEl.textContent = (window._langMessages && window._langMessages.validation) || 'Lütfen zorunlu alanları doldurun.';
+          statusEl.className = 'form-status error';
+          return;
+        }
+
+        // Show loading state
+        submitBtn.disabled = true;
+        submitText.style.display = 'none';
+        spinner.style.display = 'block';
+        statusEl.className = 'form-status';
+
+        try {
+          const data = new FormData(form);
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            statusEl.textContent = (window._langMessages && window._langMessages.success) || '✅ Mesajınız gönderildi! En kısa sürede dönüş yapacağım.';
+            statusEl.className = 'form-status success';
+            form.reset();
+          } else {
+            const json = await response.json();
+            if (json && json.errors) {
+              statusEl.textContent = '❌ ' + json.errors.map(function(e) { return e.message; }).join(', ');
+            } else {
+              statusEl.textContent = (window._langMessages && window._langMessages.error) || '❌ Bir hata oluştu. Lütfen tekrar deneyin.';
+            }
+            statusEl.className = 'form-status error';
+          }
+        } catch (err) {
+          statusEl.textContent = (window._langMessages && window._langMessages.connErr) || '❌ Bağlantı hatası. Lütfen tekrar deneyin.';
+          statusEl.className = 'form-status error';
+        } finally {
+          submitBtn.disabled = false;
+          submitText.style.display = 'inline';
+          spinner.style.display = 'none';
+        }
+      });
+    })();
+
+    /* =====================================================
+       LANGUAGE SYSTEM (TR / EN)
+    ===================================================== */
+    (function() {
+      var translations = {
+        tr: {
+          nav: ['Hakkımda', 'Deneyim', 'Projeler', 'Beceriler', 'Sertifikalar', 'İletişim'],
+          hero: {
+            badge: 'Merhaba, ben',
+            desc: 'Robotik ve yapay zekanın kesişiminde yazılım geliştiriyorum. ROS2, SLAM ve otonom sistemler üzerine çalışıyor; makine öğrenmesini gerçek dünya problemlerine uygulamaktan keyif alıyorum.',
+            btn1: 'Projelerimi Gör', btn2: 'İletişime Geç', btn3: 'CV İndir', scroll: 'Kaydır'
+          },
+          about: {
+            label: '// hakkımda',
+            title: 'Merhaba! Ben <span>Adil NAS</span>',
+            stats: ['Yıl Deneyim', 'Proje', 'Yayın'],
+            p1: 'Bilgisayar Mühendisi (YZ & Robotik), lisansımı onur derecesiyle tamamladım. Sivas Cumhuriyet Üniversitesi\'nde Bilgisayar Mühendisliği alanında Yüksek Lisans yapıyorum. Yazılım geliştirme, robotik ve otonom sistemlere duyduğum tutkuyla sürekli yeni teknolojiler öğrenmeye çalışıyorum.',
+            p2: 'Teknofest "Sanayide Dijital Teknolojiler" yarışmasında (İleri Kategori) üniversite ekibimi yönettim; otonom robotumuzla Türkiye 2.\'si olduk. Projenin tüm ROS2 yazılımını, SLAM ve otonom navigasyon sistemlerini geliştirdim.',
+            p3: 'Samsung Innovation Campus\'ta Yapay Zeka eğitimi tamamladım. Makine Öğrenmesi, Derin Öğrenme ve LLM orkestrasyon araçları (Ollama, CrewAI, LangChain) konularında kapsamlı deneyim kazandım.'
+          },
+          experience: {
+            label: '// deneyim', title: 'Kariyer <span>Yolculuğum</span>',
+            subtitle: 'Profesyonel deneyimlerim ve büyük projelerde edindiğim kazanımlar.',
+            items: [
+              { date: 'Haziran 2025 — Günümüz', desc: 'Makine Öğrenmesi ve Derin Öğrenme temelleri üzerine kapsamlı eğitim. Python ile veri analizi ve model oluşturma. Ollama, CrewAI ve LangChain ile LLM orkestrasyon araçları deneyimi. Uçtan uca yapay zeka projesi geliştirme.' },
+              { date: 'Eylül 2024 — Haziran 2025', desc: 'Teknofest yarışmasında (İleri Kategori) Türkiye 2.\'si olan otonom robotu geliştirdim. Tüm ROS2 yazılımını, SLAM Toolbox ve Nav2 ile sensör entegrasyonunu implemente ettim. Projenin ~%90\'ından sorumluydum.' },
+              { date: 'Temmuz — Ağustos 2024', desc: 'C++ ile dosya arama ve kötü amaçlı yazılım tespit algoritmaları. Sertifika tarama projesi. Tauri ortamında Svelte ve Rust kullanarak tam yığın masaüstü uygulaması geliştirdim.' }
+            ]
+          },
+          projects: {
+            label: '// projeler', title: 'Öne Çıkan <span>Projeler</span>',
+            subtitle: 'Gerçek problemlere gerçek çözümler. İşte en çok gurur duyduğum projelerim.',
+            items: [
+              { title: 'AGV — Doğal Navigasyon & Haritalama', desc: 'Raspberry Pi 4/5 ve ROS2 Humble ile geliştirilen otonom güdümlü araç. SLAM tabanlı haritalama, engel kaçınma ve LIDAR kullanan bölge tespiti içeriyor. Teknofest\'te Türkiye 2.\'si.' },
+              { title: 'Otonom Çizgi Takip Eden Robot', desc: 'Raspberry Pi 4/5 ve kamera ile kara çizgiyi takip eden mobil robot. Roboflow ile eğitilmiş ML modeli sayesinde çizgi ayrışmalarını tespit ederek yön belirliyor.' },
+              { title: 'Güvenlik Analiz Masaüstü Uygulaması', desc: 'C-Prot stajında Tauri + Svelte + Rust ile geliştirilen tam yığın masaüstü uygulaması. Dosya arama, kötü amaçlı yazılım tespiti ve sertifika tarama algoritmaları içeriyor.' }
+            ],
+            detailBtn: '🔍 Detaylar'
+          },
+          skills: {
+            label: '// beceriler', title: 'Teknoloji <span>Stackim</span>',
+            subtitle: 'Yıllar içinde ustalık kazandığım araçlar ve teknolojiler.',
+            catTitles: ['Yazılım Geliştirme', 'Robotik & Gömülü', 'DevOps & AI Araçlar']
+          },
+          certificates: {
+            label: '// sertifikalar', title: 'Aldığım <span>Sertifikalar</span>',
+            subtitle: 'Öğrenme yolculuğumda edindiğim sertifikalar ve yarışma başarıları.',
+            viewBtn: 'Görüntüle'
+          },
+          testimonials: {
+            label: '// referanslar', title: 'Ne Diyorlar <span>Benim İçin?</span>',
+            subtitle: 'Birlikte çalıştığım insanların değerli görüşleri.',
+            items: [
+              { text: 'Adil ile otonom mobil robot projesinde birlikte çalışma fırsatı buldum. ROS 2 tabanlı robot yazılımı, sensör entegrasyonu ve robot navigasyonu konularında oldukça yetkin biri. Problemlere analitik yaklaşımı ve çözüm üretmedeki hızı, onu ekip ortamlarında değerli bir katkı sağlayıcı kılıyor. Adil\'in disiplinli çalışma anlayışı ve yeni teknolojileri hızla öğrenip adapte olabilme yeteneği sayesinde projelerimizde önemli ilerlemeler kaydettik. Robotik ve yapay zeka alanlarında büyük işler başaracağına kesinlikle inanıyorum.', role: 'Software Engineer @ Yapı Kredi Teknoloji (via Metasis)' }
+            ]
+          },
+          contact: {
+            label: '// iletişim', title: 'Bir Şeyler <span>Yapalım!</span>',
+            subtitle: 'Proje fikrinizi tartışmak veya sadece merhaba demek için bana ulaşın.',
+            labels: ['E-posta', 'Konum', 'GitHub', 'LinkedIn'],
+            values: ['adilnasceng@gmail.com', 'Mersin, Türkiye', 'github.com/Adilnasceng', 'linkedin.com/in/adilnas'],
+            formLabels: ['Ad Soyad', 'E-posta', 'Konu', 'Mesajınız'],
+            placeholders: ['Adınız Soyadınız', 'ornek@email.com', 'Projeniz hakkında...', 'Merhaba! Bir projem var...'],
+            submitBtn: 'Mesaj Gönder ✉️',
+            validation: 'Lütfen zorunlu alanları doldurun.',
+            success: '✅ Mesajınız gönderildi! En kısa sürede dönüş yapacağım.',
+            error: '❌ Bir hata oluştu. Lütfen tekrar deneyin.',
+            connErr: '❌ Bağlantı hatası. Lütfen tekrar deneyin.'
+          },
+          footer: { copy: '© 2025 Adil NAS. Sevgiyle &amp; Kahveyle yapıldı ☕' },
+          modals: {
+            about: 'Proje Hakkında', features: 'Özellikler', techStack: 'Teknoloji Stack',
+            github: 'GitHub\'da Gör', demo: 'Canlı Demo',
+            agv: {
+              modalTitle: 'AGV — Doğal Navigasyon & Haritalama',
+              desc: 'Raspberry Pi 4/5 ve ROS2 Humble (Ubuntu) ile geliştirilen otonom güdümlü araç. SLAM tabanlı haritalama, engel kaçınma ve LIDAR kullanan kısıtlı/düşük hız bölgesi tespiti özellikleri içeriyor. Teknofest "Sanayide Dijital Teknolojiler" yarışmasında (İleri Kategori) Türkiye 2.\'si oldu.',
+              features: ['SLAM tabanlı ortam haritalama (SLAM Toolbox)', 'Otonom navigasyon ve rota planlama (Nav2)', 'LIDAR ile engel kaçınma ve bölge tespiti', 'Raspberry Pi ↔ Arduino motor kontrolü ve enkoder geri bildirimi', 'IMU sensör veri işleme ve füzyonu', 'URDF robot modeli tasarımı', 'Fabrika lojistiği senaryoları için navigasyon']
+            },
+            linerobot: {
+              modalTitle: 'Otonom Çizgi Takip Eden Robot',
+              desc: 'Raspberry Pi 4/5 ve onboard kamera kullanılarak kara çizgiyi takip eden mobil robot. Roboflow ile eğitilmiş makine öğrenmesi modeli sayesinde çizgi ayrışmalarını tespit ederek yön belirliyor. Özel motor sürücü devresi ve GPIO ile DC motor kontrolü sağlandı.',
+              features: ['Kamera tabanlı gerçek zamanlı çizgi takibi', 'Roboflow ile çizgi ayrışma tespiti (ML modeli)', 'GPIO ile özel motor sürücü devresi kontrolü', 'DC motor hız ve yön kontrolü', 'Gömülü sistemler ve hareket algoritmaları deneyimi']
+            },
+            secapp: {
+              modalTitle: 'Güvenlik Analiz Masaüstü Uygulaması',
+              desc: 'C-Prot stajında geliştirilen tam yığın masaüstü güvenlik uygulaması. Tauri + Svelte (frontend) ve Rust + C++ (backend) mimarisiyle inşa edildi. Dosya arama, kötü amaçlı yazılım tespiti ve sertifika tarama özellikleri sunuyor.',
+              features: ['C++ ile gelişmiş dosya arama algoritması', 'Kötü amaçlı yazılım tespit motoru', 'Dosyalardaki sertifika tarama ve doğrulama', 'Svelte ile modern ve hızlı kullanıcı arayüzü', 'Rust backend ile yüksek performanslı işlemler', 'Tauri ile çapraz platform masaüstü dağıtımı']
+            }
+          },
+          backToTop: 'Yukarı çık'
+        },
+        en: {
+          nav: ['About', 'Experience', 'Projects', 'Skills', 'Certificates', 'Contact'],
+          hero: {
+            badge: "Hi, I'm",
+            desc: "I build software at the intersection of robotics and artificial intelligence. I work on ROS2, SLAM and autonomous systems — and enjoy applying machine learning to real-world problems.",
+            btn1: 'View My Projects', btn2: 'Get in Touch', btn3: 'Download CV', scroll: 'Scroll'
+          },
+          about: {
+            label: '// about',
+            title: "Hello! I'm <span>Adil NAS</span>",
+            stats: ['Years of Experience', 'Projects', 'Publication'],
+            p1: 'Computer Engineer (AI & Robotics), graduated with honors from undergraduate. I am pursuing an M.Sc. in Computer Engineering at Sivas Cumhuriyet University. I am passionate about software development, robotics, and autonomous systems, constantly striving to learn new technologies.',
+            p2: 'I led my university\'s team in the Teknofest "Digital Technologies in Industry" competition (Advanced Category), achieving 2nd place in Turkey with an autonomous robot. I developed all ROS2 software, SLAM and autonomous navigation systems.',
+            p3: 'I completed an AI training at Samsung Innovation Campus, gaining extensive experience in Machine Learning, Deep Learning, and LLM orchestration tools (Ollama, CrewAI, LangChain).'
+          },
+          experience: {
+            label: '// experience', title: 'My Career <span>Journey</span>',
+            subtitle: 'My professional experience and accomplishments in large-scale projects.',
+            items: [
+              { date: 'June 2025 — Present', desc: 'Comprehensive training on Machine Learning and Deep Learning fundamentals. Python for data analysis and model building. Experience with LLM orchestration tools including Ollama, CrewAI and LangChain. Developed and presented an end-to-end AI project.' },
+              { date: 'September 2024 — June 2025', desc: 'Led the development of an autonomous robot that achieved 2nd place in the Teknofest competition (Advanced Category). Implemented all ROS2-based software including SLAM Toolbox and Nav2. Responsible for ~90% of the project development.' },
+              { date: 'July — August 2024', desc: 'Developed file search and malware detection algorithms in C++. Created a certificate scanning project. Built a full-stack desktop application using Svelte and Rust within the Tauri environment.' }
+            ]
+          },
+          projects: {
+            label: '// projects', title: 'Featured <span>Projects</span>',
+            subtitle: "Real solutions to real problems. Here are the projects I'm most proud of.",
+            items: [
+              { title: 'AGV — Natural Navigation & Mapping', desc: 'Autonomous guided vehicle built with Raspberry Pi 4/5 and ROS2 Humble. Features SLAM-based mapping, obstacle avoidance and LIDAR-based zone detection. 2nd place in Teknofest.' },
+              { title: 'Autonomous Line-Following Robot', desc: 'Mobile robot using Raspberry Pi 4/5 and camera to follow a black stripe. An ML model trained with Roboflow detects line splits and determines direction.' },
+              { title: 'Security Analysis Desktop App', desc: 'Full-stack desktop security app built with Tauri + Svelte + Rust during C-Prot internship. Features file search, malware detection and certificate scanning algorithms.' }
+            ],
+            detailBtn: '🔍 Details'
+          },
+          skills: {
+            label: '// skills', title: 'My Tech <span>Stack</span>',
+            subtitle: "Tools and technologies I've mastered over the years.",
+            catTitles: ['Software Development', 'Robotics & Embedded', 'DevOps & AI Tools']
+          },
+          certificates: {
+            label: '// certificates', title: 'My <span>Certificates</span>',
+            subtitle: 'Certificates and competition achievements earned on my learning journey.',
+            viewBtn: 'View'
+          },
+          testimonials: {
+            label: '// testimonials', title: 'What They Say <span>About Me?</span>',
+            subtitle: "Valuable feedback from people I've worked with.",
+            items: [
+              { text: "I had the opportunity to work with Adil on an autonomous mobile robot project. He is highly skilled in ROS 2-based robot software, sensor integration, and robot navigation. His analytical approach to problems and ability to quickly develop solutions make him a valuable contributor in team environments. Thanks to Adil's disciplined work ethic and his ability to quickly learn and adapt to new technologies, we achieved significant progress in our projects. I strongly believe he will accomplish great things in the fields of robotics and artificial intelligence.", role: 'Software Engineer @ Yapı Kredi Teknoloji (via Metasis)' }
+            ]
+          },
+          contact: {
+            label: '// contact', title: "Let's Build <span>Something!</span>",
+            subtitle: 'Reach out to discuss your project idea or just to say hello.',
+            labels: ['Email', 'Location', 'GitHub', 'LinkedIn'],
+            values: ['adilnasceng@gmail.com', 'Mersin, Turkey', 'github.com/Adilnasceng', 'linkedin.com/in/adilnas'],
+            formLabels: ['Full Name', 'Email', 'Subject', 'Message'],
+            placeholders: ['Your Full Name', 'example@email.com', 'About your project...', 'Hello! I have a project for you...'],
+            submitBtn: 'Send Message ✉️',
+            validation: 'Please fill in the required fields.',
+            success: '✅ Your message has been sent! I\'ll get back to you shortly.',
+            error: '❌ An error occurred. Please try again.',
+            connErr: '❌ Connection error. Please try again.'
+          },
+          footer: { copy: '© 2025 Adil NAS. Made with Love &amp; Coffee ☕' },
+          modals: {
+            about: 'About the Project', features: 'Features', techStack: 'Tech Stack',
+            github: 'View on GitHub', demo: 'Live Demo',
+            agv: {
+              modalTitle: 'AGV — Natural Navigation & Mapping',
+              desc: 'Autonomous guided vehicle built with Raspberry Pi 4/5 and ROS2 Humble (Ubuntu). Features SLAM-based mapping, obstacle avoidance, and LIDAR-based restricted/low-speed zone detection. Achieved 2nd place in the Teknofest "Digital Technologies in Industry" competition (Advanced Category).',
+              features: ['SLAM-based environment mapping (SLAM Toolbox)', 'Autonomous navigation and path planning (Nav2)', 'LIDAR-based obstacle avoidance and zone detection', 'Raspberry Pi ↔ Arduino motor control and encoder feedback', 'IMU sensor data processing and fusion', 'URDF robot model design', 'Navigation for factory logistics scenarios']
+            },
+            linerobot: {
+              modalTitle: 'Autonomous Line-Following Robot',
+              desc: 'Mobile robot using Raspberry Pi 4/5 and onboard camera to follow a black stripe. An ML model trained with Roboflow detects line splits and determines direction. Custom motor driver circuit and GPIO control for DC motors.',
+              features: ['Camera-based real-time line tracking', 'Roboflow line split detection (ML model)', 'Custom motor driver circuit control via GPIO', 'DC motor speed and direction control', 'Hands-on embedded systems and motion algorithm experience']
+            },
+            secapp: {
+              modalTitle: 'Security Analysis Desktop App',
+              desc: 'Full-stack desktop security application developed during the C-Prot internship. Built with Tauri + Svelte (frontend) and Rust + C++ (backend) architecture. Provides file search, malware detection and certificate scanning features.',
+              features: ['Advanced file search algorithm in C++', 'Malware detection engine', 'Certificate scanning and validation in files', 'Modern and fast UI with Svelte', 'High-performance operations with Rust backend', 'Cross-platform desktop distribution with Tauri']
+            }
+          },
+          backToTop: 'Back to top'
+        }
+      };
+
+      var currentLang = localStorage.getItem('lang') || 'tr';
+      window._langMessages = translations[currentLang].contact;
+
+      function qs(sel) { return document.querySelector(sel); }
+      function qsa(sel) { return document.querySelectorAll(sel); }
+      function inSec(id, sel) { var s = document.getElementById(id); return s ? s.querySelector(sel) : null; }
+      function inSecAll(id, sel) { var s = document.getElementById(id); return s ? s.querySelectorAll(sel) : []; }
+
+      // Update button text (keeps emoji span intact)
+      function updateBtn(btn, text) {
+        if (!btn) return;
+        var span = btn.querySelector('span');
+        btn.innerHTML = '';
+        if (span) btn.appendChild(span);
+        btn.appendChild(document.createTextNode(' ' + text));
+      }
+
+      function applyLang(lang) {
+        var t = translations[lang];
+        document.documentElement.setAttribute('lang', lang === 'tr' ? 'tr' : 'en');
+        window._langMessages = t.contact;
+
+        // NAV LINKS
+        var navLinks = qsa('.nav-links li a');
+        t.nav.forEach(function(txt, i) { if (navLinks[i]) navLinks[i].textContent = txt; });
+
+        // HERO
+        var heroBadge = qs('.hero-badge');
+        if (heroBadge) heroBadge.textContent = t.hero.badge;
+        var heroDesc = qs('.hero-desc');
+        if (heroDesc) heroDesc.textContent = t.hero.desc;
+        var heroBtns = qsa('.hero-buttons a');
+        updateBtn(heroBtns[0], t.hero.btn1);
+        updateBtn(heroBtns[1], t.hero.btn2);
+        updateBtn(heroBtns[2], t.hero.btn3);
+        var scrollSpan = qs('.hero-scroll span');
+        if (scrollSpan) scrollSpan.textContent = t.hero.scroll;
+
+        // ABOUT
+        var el = inSec('about', '.section-label');
+        if (el) el.textContent = t.about.label;
+        el = inSec('about', '.section-title');
+        if (el) el.innerHTML = t.about.title;
+        var statLabels = inSecAll('about', '.stat-label');
+        t.about.stats.forEach(function(s, i) { if (statLabels[i]) statLabels[i].textContent = s; });
+        var paras = inSecAll('about', '.about-text p');
+        if (paras[0]) paras[0].textContent = t.about.p1;
+        if (paras[1]) paras[1].textContent = t.about.p2;
+        if (paras[2]) paras[2].textContent = t.about.p3;
+
+        // EXPERIENCE
+        el = inSec('experience', '.section-label');
+        if (el) el.textContent = t.experience.label;
+        el = inSec('experience', '.section-title');
+        if (el) el.innerHTML = t.experience.title;
+        el = inSec('experience', '.section-subtitle');
+        if (el) el.textContent = t.experience.subtitle;
+        var tlDates = inSecAll('experience', '.timeline-date');
+        var tlDescs = inSecAll('experience', '.timeline-desc');
+        t.experience.items.forEach(function(item, i) {
+          if (tlDates[i]) tlDates[i].textContent = item.date;
+          if (tlDescs[i]) tlDescs[i].textContent = item.desc;
+        });
+
+        // PROJECTS
+        el = inSec('projects', '.section-label');
+        if (el) el.textContent = t.projects.label;
+        el = inSec('projects', '.section-title');
+        if (el) el.innerHTML = t.projects.title;
+        el = inSec('projects', '.section-subtitle');
+        if (el) el.textContent = t.projects.subtitle;
+        var projTitles = inSecAll('projects', '.project-title');
+        var projDescs = inSecAll('projects', '.project-desc');
+        t.projects.items.forEach(function(item, i) {
+          if (projTitles[i]) projTitles[i].textContent = item.title;
+          if (projDescs[i]) projDescs[i].textContent = item.desc;
+        });
+        inSecAll('projects', '.btn-detail').forEach(function(btn) { btn.textContent = t.projects.detailBtn; });
+
+        // SKILLS
+        el = inSec('skills', '.section-label');
+        if (el) el.textContent = t.skills.label;
+        el = inSec('skills', '.section-title');
+        if (el) el.innerHTML = t.skills.title;
+        el = inSec('skills', '.section-subtitle');
+        if (el) el.textContent = t.skills.subtitle;
+        var catTitles = inSecAll('skills', '.skill-cat-title');
+        t.skills.catTitles.forEach(function(title, i) { if (catTitles[i]) catTitles[i].textContent = title; });
+
+        // CERTIFICATES
+        el = inSec('certificates', '.section-label');
+        if (el) el.textContent = t.certificates.label;
+        el = inSec('certificates', '.section-title');
+        if (el) el.innerHTML = t.certificates.title;
+        el = inSec('certificates', '.section-subtitle');
+        if (el) el.textContent = t.certificates.subtitle;
+        inSecAll('certificates', '.btn-cert').forEach(function(btn) {
+          btn.innerHTML = '&#128279; ' + t.certificates.viewBtn;
+        });
+
+        // TESTIMONIALS
+        el = inSec('testimonials', '.section-label');
+        if (el) el.textContent = t.testimonials.label;
+        el = inSec('testimonials', '.section-title');
+        if (el) el.innerHTML = t.testimonials.title;
+        el = inSec('testimonials', '.section-subtitle');
+        if (el) el.textContent = t.testimonials.subtitle;
+        var testTexts = inSecAll('testimonials', '.testimonial-text');
+        var testRoles = inSecAll('testimonials', '.testimonial-role');
+        t.testimonials.items.forEach(function(item, i) {
+          if (testTexts[i]) testTexts[i].textContent = item.text;
+          if (testRoles[i]) testRoles[i].textContent = item.role;
+        });
+
+        // CONTACT
+        el = inSec('contact', '.section-label');
+        if (el) el.textContent = t.contact.label;
+        el = inSec('contact', '.section-title');
+        if (el) el.innerHTML = t.contact.title;
+        el = inSec('contact', '.section-subtitle');
+        if (el) el.textContent = t.contact.subtitle;
+        var cLabels = inSecAll('contact', '.contact-label');
+        var cValues = inSecAll('contact', '.contact-value');
+        t.contact.labels.forEach(function(l, i) { if (cLabels[i]) cLabels[i].textContent = l; });
+        t.contact.values.forEach(function(v, i) { if (cValues[i]) cValues[i].textContent = v; });
+        var fLabels = inSecAll('contact', '.form-label');
+        t.contact.formLabels.forEach(function(l, i) { if (fLabels[i]) fLabels[i].textContent = l; });
+        var inputs = [qs('#name'), qs('#email'), qs('#subject'), qs('#message')];
+        t.contact.placeholders.forEach(function(ph, i) { if (inputs[i]) inputs[i].placeholder = ph; });
+        var submitText = qs('#submit-text');
+        if (submitText) submitText.textContent = t.contact.submitBtn;
+
+        // FOOTER
+        var footerCopy = qs('.footer-copy');
+        if (footerCopy) footerCopy.innerHTML = t.footer.copy;
+
+        // MODALS
+        ['agv', 'linerobot', 'secapp'].forEach(function(id) {
+          var modal = document.getElementById('modal-' + id);
+          if (!modal) return;
+          var mt = t.modals[id];
+          var modalTitleEl = modal.querySelector('.modal-title');
+          if (modalTitleEl && mt.modalTitle) modalTitleEl.textContent = mt.modalTitle;
+          var secTitles = modal.querySelectorAll('.modal-section-title');
+          if (secTitles[0]) secTitles[0].textContent = t.modals.about;
+          if (secTitles[1]) secTitles[1].textContent = t.modals.features;
+          if (secTitles[2]) secTitles[2].textContent = t.modals.techStack;
+          var desc = modal.querySelector('.modal-desc');
+          if (desc) desc.textContent = mt.desc;
+          var featureList = modal.querySelector('.modal-features');
+          if (featureList) featureList.innerHTML = mt.features.map(function(f) { return '<li>' + f + '</li>'; }).join('');
+          var links = modal.querySelectorAll('.modal-links a');
+          if (links[0]) links[0].innerHTML = '&#128279; ' + t.modals.github;
+          if (links[1]) links[1].innerHTML = '&#127758; ' + t.modals.demo;
+        });
+
+        // BACK TO TOP
+        var backBtn = qs('#back-to-top');
+        if (backBtn) backBtn.setAttribute('aria-label', t.backToTop);
+
+        // LANG BUTTON label
+        var langBtn = qs('#lang-toggle');
+        if (langBtn) langBtn.textContent = lang === 'tr' ? 'EN' : 'TR';
+      }
+
+      // Initialize
+      applyLang(currentLang);
+
+      // Button click
+      var langBtn = document.getElementById('lang-toggle');
+      if (langBtn) {
+        langBtn.addEventListener('click', function() {
+          currentLang = currentLang === 'tr' ? 'en' : 'tr';
+          localStorage.setItem('lang', currentLang);
+          applyLang(currentLang);
+        });
+      }
+    })();
+
+    /* =====================================================
+       BACK TO TOP
+    ===================================================== */
+    (function() {
+      const btn = document.getElementById('back-to-top');
+      window.addEventListener('scroll', function() {
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, { passive: true });
+      btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+
+  </script>
+</body>
+</html>

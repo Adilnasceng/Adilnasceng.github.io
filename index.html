@@ -382,7 +382,7 @@
       }
 
       .hamburger { display: flex; }
-      .nav-cv-btn span { display: none; }
+      .nav-cv-btn span:last-child { display: none; }
     }
 
     /* =====================================================
@@ -544,6 +544,20 @@
       flex-wrap: wrap;
       gap: 1rem;
       align-items: center;
+    }
+
+    @media (max-width: 600px) {
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .hero-buttons .btn-primary,
+      .hero-buttons .btn-outline,
+      .hero-buttons .btn-cv {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
     }
 
     .btn-primary {
@@ -1823,7 +1837,7 @@
       </ul>
 
       <div class="nav-actions">
-        <a href="cv/Adil-NAS-CV.pdf" download="Adil-NAS-CV.pdf" class="nav-cv-btn">
+        <a id="cv-btn-nav" href="cv/Adil-NAS-CV-TR-R.pdf" download="Adil-NAS-CV-TR-R.pdf" class="nav-cv-btn">
           <span>&#8595;</span>
           <span>CV</span>
         </a>
@@ -1866,7 +1880,7 @@
         <a href="#contact" class="btn-outline">
           <span>&#128140;</span> İletişime Geç
         </a>
-        <a href="cv/Adil-NAS-CV.pdf" download="Adil-NAS-CV.pdf" class="btn-cv">
+        <a id="cv-btn-hero" href="cv/Adil-NAS-CV-TR-R.pdf" download="Adil-NAS-CV-TR-R.pdf" class="btn-cv">
           <span>&#8595;</span> CV İndir
         </a>
       </div>
@@ -2245,6 +2259,26 @@
         <div class="cert-date">📅 Kas 2023</div>
         <a href="certs/java.jpg" target="_blank" rel="noopener" class="btn-cert">&#128279; Görüntüle</a>
       </div>
+
+      <div class="cert-card reveal reveal-delay-1">
+        <div class="cert-icon cert-icon-google">👁️</div>
+        <div>
+          <div class="cert-title">OpenCV Bootcamp</div>
+          <div class="cert-issuer">OpenCV University</div>
+        </div>
+        <div class="cert-date">📅 Mar 2026</div>
+        <a href="certs/opencvbootcamp.png" target="_blank" rel="noopener" class="btn-cert">&#128279; Görüntüle</a>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-2">
+        <div class="cert-icon cert-icon-google">🐍</div>
+        <div>
+          <div class="cert-title">Python For Beginners</div>
+          <div class="cert-issuer">OpenCV University</div>
+        </div>
+        <div class="cert-date">📅 Mar 2026</div>
+        <a href="certs/pythonforbeginners.png" target="_blank" rel="noopener" class="btn-cert">&#128279; Görüntüle</a>
+      </div>
     </div>
   </section>
 
@@ -2586,8 +2620,9 @@
       const COLORS = ['#6c5ce7', '#a29bfe', '#00cec9'];
 
       function resize() {
-        W = canvas.width = canvas.offsetWidth;
-        H = canvas.height = canvas.offsetHeight;
+        var hero = canvas.parentElement;
+        W = canvas.width = hero ? hero.offsetWidth : window.innerWidth;
+        H = canvas.height = hero ? hero.offsetHeight : window.innerHeight;
       }
 
       function createParticle() {
@@ -3161,6 +3196,14 @@
         var t = translations[lang];
         document.documentElement.setAttribute('lang', lang === 'tr' ? 'tr' : 'en');
         window._langMessages = t.contact;
+
+        // CV BUTTONS
+        var cvFile = lang === 'tr' ? 'cv/Adil-NAS-CV-TR-R.pdf' : 'cv/Adil-NAS-CV-EN-R.pdf';
+        var cvName = lang === 'tr' ? 'Adil-NAS-CV-TR-R.pdf' : 'Adil-NAS-CV-EN-R.pdf';
+        ['cv-btn-nav', 'cv-btn-hero'].forEach(function(id) {
+          var btn = document.getElementById(id);
+          if (btn) { btn.href = cvFile; btn.download = cvName; }
+        });
 
         // NAV LINKS
         var navLinks = qsa('.nav-links li a');

@@ -1,2 +1,2 @@
 Personal portfolio website built with HTML, CSS and JavaScript.
-Live: https://adilnasceng.github.io
+Live: https://adilnas.dev

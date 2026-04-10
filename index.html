@@ -38,22 +38,40 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Adil NAS",
-    "url": "https://adilnas.dev",
-    "jobTitle": "Computer Engineer",
-    "description": "Bilgisayar Mühendisi, ROS2 geliştirici ve Teknofest 2.si. Otonom sistemler, SLAM, yapay zeka ve makine öğrenmesi alanlarında çalışıyorum.",
-    "image": "https://adilnas.dev/img/profil.jpg",
-    "email": "adilnasceng@gmail.com",
-    "sameAs": [
-      "https://github.com/Adilnasceng",
-      "https://linkedin.com/in/adilnas",
-      "https://instagram.com/adil.nas"
-    ],
-    "knowsAbout": ["ROS2", "SLAM", "Autonomous Systems", "Machine Learning", "Deep Learning", "Python", "C++", "Robotics", "Computer Vision", "LangChain", "CrewAI"]
-  }
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://adilnas.dev/#person",
+      "name": "Adil NAS",
+      "url": "https://adilnas.dev",
+      "jobTitle": "Computer Engineer",
+      "description": "Bilgisayar Mühendisi, ROS2 geliştirici ve Teknofest 2.si. Otonom sistemler, SLAM, yapay zeka ve makine öğrenmesi alanlarında çalışıyorum.",
+      "image": "https://adilnas.dev/img/profil.jpg",
+      "email": "adilnasceng@gmail.com",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Sivas Cumhuriyet Üniversitesi",
+        "url": "https://www.cumhuriyet.edu.tr"
+      },
+      "award": "Teknofest 2025 - İnsansız Kara Aracı Yarışması 2.si",
+      "sameAs": [
+        "https://github.com/Adilnasceng",
+        "https://linkedin.com/in/adilnas",
+        "https://instagram.com/adil.nas"
+      ],
+      "knowsAbout": ["ROS2", "SLAM", "Autonomous Systems", "Machine Learning", "Deep Learning", "Python", "C++", "Robotics", "Computer Vision", "LangChain", "CrewAI"]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://adilnas.dev/#website",
+      "url": "https://adilnas.dev",
+      "name": "Adil NAS | Computer Engineer",
+      "description": "Adil NAS kişisel portföy sitesi — AI, Robotik ve yazılım projeleri.",
+      "author": { "@id": "https://adilnas.dev/#person" }
+    }
+  ]
   </script>
 
   <!-- Favicon -->

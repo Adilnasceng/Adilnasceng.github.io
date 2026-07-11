@@ -54,7 +54,7 @@
         "name": "Sivas Cumhuriyet Üniversitesi",
         "url": "https://www.cumhuriyet.edu.tr"
       },
-      "award": "Teknofest 2025 - İnsansız Kara Aracı Yarışması 2.si",
+      "award": "TEKNOFEST 2025 - Sanayide Dijital Teknolojiler Yarışması (İleri Kategori) Türkiye 2.si",
       "sameAs": [
         "https://github.com/Adilnasceng",
         "https://linkedin.com/in/adilnas",
@@ -1627,6 +1627,13 @@
       transform: translateY(-2px);
     }
 
+    /* GitHub Sponsors kalbi */
+    .sponsor-link:hover {
+      background: rgba(219,97,162,0.12);
+      border-color: #db61a2;
+      color: #db61a2;
+    }
+
     @media (max-width: 600px) {
       .footer-inner { grid-template-columns: 1fr; text-align: center; }
       .footer-socials { justify-content: center; }
@@ -1881,6 +1888,7 @@
       <ul class="nav-links" id="nav-links">
         <li><a href="#about">Hakkımda</a></li>
         <li><a href="#experience">Deneyim</a></li>
+        <li><a href="#education">Eğitim</a></li>
         <li><a href="#projects">Projeler</a></li>
         <li><a href="#skills">Beceriler</a></li>
         <li><a href="#certificates">Sertifikalar</a></li>
@@ -1969,7 +1977,7 @@
             <div class="stat-label">Proje</div>
           </div>
           <div class="stat-item reveal reveal-delay-2">
-            <div class="stat-number">1</div>
+            <div class="stat-number">2</div>
             <div class="stat-label">Yayın</div>
           </div>
         </div>
@@ -1983,7 +1991,7 @@
           Bilgisayar Mühendisi (YZ & Robotik), lisansımı onur derecesiyle tamamladım. Sivas Cumhuriyet Üniversitesi'nde Bilgisayar Mühendisliği alanında Yüksek Lisans yapıyorum. Yazılım geliştirme, robotik ve otonom sistemlere duyduğum tutkuyla sürekli yeni teknolojiler öğrenmeye çalışıyorum.
         </p>
         <p>
-          Teknofest "Sanayide Dijital Teknolojiler" yarışmasında (İleri Kategori) üniversite ekibimi yönettim; otonom robotumuzla Türkiye 2.'si olduk. Projenin tüm ROS2 yazılımını, SLAM ve otonom navigasyon sistemlerini geliştirdim.
+          Teknofest "Sanayide Dijital Teknolojiler" yarışmasında (İleri Kategori) üniversite ekibimi yönettim; otonom robotumuzla Türkiye 2.'si olduk. Projenin tüm ROS2 yazılımını, SLAM ve otonom navigasyon sistemlerini geliştirdim. Şu anda aynı ekiple fabrika içi lojistik için otonom forklift AGV geliştiriyoruz.
         </p>
         <p>
           Samsung Innovation Campus'ta Yapay Zeka eğitimi tamamladım. Makine Öğrenmesi, Derin Öğrenme ve LLM orkestrasyon araçları (Ollama, CrewAI, LangChain) konularında kapsamlı deneyim kazandım.
@@ -2015,10 +2023,32 @@
         <div class="timeline-track-fill" id="timeline-fill"></div>
       </div>
 
+      <!-- Item 0: Forklift AGV (ongoing) -->
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <div class="timeline-date">2026 — Günümüz</div>
+          <div class="timeline-role">Robotics &amp; AI Team Lead</div>
+          <div class="timeline-company">Otonom Forklift AGV — Fabrika İçi Lojistik</div>
+          <div class="timeline-desc">
+            Teknofest 2.'liğinin ardından aynı ekiple fabrika içi lojistik için otonom forklift AGV geliştiriyorum. Haritalama, rota takibi, engel algılama, PLC/fabrika otomasyonu haberleşmesi, görüntü tabanlı çizgi takibi ve QR kod ile konumlandırma üzerinde çalışıyorum.
+          </div>
+          <div class="timeline-techs">
+            <span class="tech-badge">ROS2</span>
+            <span class="tech-badge">PLC</span>
+            <span class="tech-badge">Computer Vision</span>
+            <span class="tech-badge">QR Localization</span>
+          </div>
+        </div>
+        <div class="timeline-dot-col">
+          <div class="timeline-dot"></div>
+        </div>
+        <div class="timeline-spacer"></div>
+      </div>
+
       <!-- Item 1 -->
       <div class="timeline-item">
         <div class="timeline-card">
-          <div class="timeline-date">Haziran 2025 — Günümüz</div>
+          <div class="timeline-date">Temmuz — Kasım 2025</div>
           <div class="timeline-role">AI Trainee</div>
           <div class="timeline-company">Samsung Innovation Campus</div>
           <div class="timeline-desc">
@@ -2084,6 +2114,55 @@
   </section>
 
   <!-- =====================================================
+       EDUCATION & PUBLICATION
+  ===================================================== -->
+  <section id="education">
+    <div class="section-label">// eğitim &amp; yayın</div>
+    <h2 class="section-title">Eğitim &amp; <span>Yayın</span></h2>
+    <p class="section-subtitle">Akademik geçmişim ve yayınlanmış çalışmam.</p>
+
+    <div class="certs-grid">
+      <div class="cert-card reveal">
+        <div class="cert-icon cert-icon-udemy"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <div>
+          <div class="cert-title">Yüksek Lisans — Bilgisayar Mühendisliği</div>
+          <div class="cert-issuer">Sivas Cumhuriyet Üniversitesi · GPA 3.75/4.00 · Tez: Ses, görüntü ve mekânsal sensör veri füzyonuyla otonom mobil robot navigasyonu</div>
+        </div>
+        <div class="cert-date"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:4px"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Eyl 2025 — Devam</div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-1">
+        <div class="cert-icon cert-icon-google"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <div>
+          <div class="cert-title">Lisans — Bilgisayar Mühendisliği</div>
+          <div class="cert-issuer">Sivas Cumhuriyet Üniversitesi · GPA 3.03/4.00 · Onur Derecesi</div>
+        </div>
+        <div class="cert-date"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:4px"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Eyl 2021 — Haz 2025</div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-2">
+        <div class="cert-icon cert-icon-aws"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+        <div>
+          <div class="cert-title">Comparative Analysis of Data Balancing and Dimensionality Reduction Strategies in Software Defect Prediction</div>
+          <div class="cert-issuer">NAS, A.; Kekül, H.; Yüksek, A. G. — ICIAS 2026 (Uluslararası Konferans)</div>
+        </div>
+        <div class="cert-date"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:4px"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>2026</div>
+        <a href="https://drive.google.com/file/d/1seQ_N_XHRxq0z_du9o4i-66vDNsD4yLn/view" target="_blank" rel="noopener" class="btn-cert"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:4px"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Görüntüle</a>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-3">
+        <div class="cert-icon cert-icon-aws"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <div>
+          <div class="cert-title">IoT-Enhanced MIS Architectures for Autonomous Robotic Systems</div>
+          <div class="cert-issuer">NAS, A.; Mandacı, E. D.; Yüksek, A. G. — Kitap Bölümü</div>
+        </div>
+        <div class="cert-date"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:4px"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>2025</div>
+        <a href="https://zenodo.org/records/18039480" target="_blank" rel="noopener" class="btn-cert"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:4px"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Görüntüle</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
        PROJECTS
   ===================================================== -->
   <section id="projects">
@@ -2107,7 +2186,7 @@
             <span class="tech-badge">Raspberry Pi 4/5</span>
           </div>
           <div class="project-actions">
-            <a href="https://github.com/Adilnasceng" target="_blank" rel="noopener" class="btn-ghost">&#128279; GitHub</a>
+            <a href="https://github.com/Adilnasceng/teknofest-agv" target="_blank" rel="noopener" class="btn-ghost">&#128279; GitHub</a>
             <button class="btn-detail" onclick="openModal('agv')">&#128269; Detaylar</button>
           </div>
         </div>
@@ -2128,7 +2207,7 @@
             <span class="tech-badge">Roboflow</span>
           </div>
           <div class="project-actions">
-            <a href="https://github.com/Adilnasceng" target="_blank" rel="noopener" class="btn-ghost">&#128279; GitHub</a>
+            <a href="https://github.com/Adilnasceng/Line-follower" target="_blank" rel="noopener" class="btn-ghost">&#128279; GitHub</a>
             <button class="btn-detail" onclick="openModal('linerobot')">&#128269; Detaylar</button>
           </div>
         </div>
@@ -2149,8 +2228,69 @@
             <span class="tech-badge">C++</span>
           </div>
           <div class="project-actions">
-            <a href="https://github.com/Adilnasceng" target="_blank" rel="noopener" class="btn-ghost">&#128279; GitHub</a>
+            <a href="https://github.com/Adilnasceng/Digital-signature-verifier" target="_blank" rel="noopener" class="btn-ghost">&#128279; GitHub</a>
             <button class="btn-detail" onclick="openModal('secapp')">&#128269; Detaylar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Multi-Robot Warehouse -->
+      <div class="project-card reveal">
+        <div class="project-img project-img-ecommerce"><svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-light)"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+        <div class="project-body">
+          <h3 class="project-title">Çoklu Robot Depo Otomasyonu</h3>
+          <p class="project-desc">
+            Gazebo'da 4 AGV'li tam otonom depo simülasyonu. Merkezi filo yöneticisi, Hungarian/Greedy görev atama, CBS ile çarpışmasız rota planlama ve web tabanlı canlı izleme paneli.
+          </p>
+          <div class="project-techs">
+            <span class="tech-badge">ROS2</span>
+            <span class="tech-badge">Gazebo</span>
+            <span class="tech-badge">Nav2</span>
+            <span class="tech-badge">Docker</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Adilnasceng/multi-robot-warehouse" target="_blank" rel="noopener" class="btn-ghost">&#128279; GitHub</a>
+            <button class="btn-detail" onclick="openModal('warehouse')">&#128269; Detaylar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5: ShieldBlock -->
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-img project-img-chat"><svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-light)"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>
+        <div class="project-body">
+          <h3 class="project-title">ShieldBlock — Reklam Engelleyici</h3>
+          <p class="project-desc">
+            220+ kurallı üretim kalitesinde Chrome MV3 reklam engelleyici. Çerez bildirimi temizleme (50+ framework), anti-adblock atlatma ve kozmetik filtreleme içeriyor.
+          </p>
+          <div class="project-techs">
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">Chrome MV3</span>
+            <span class="tech-badge">declarativeNetRequest</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Adilnasceng/shieldblock" target="_blank" rel="noopener" class="btn-ghost">&#128279; GitHub</a>
+            <button class="btn-detail" onclick="openModal('shieldblock')">&#128269; Detaylar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6: RequestLab -->
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-img project-img-analytics"><svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-light)"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></div>
+        <div class="project-body">
+          <h3 class="project-title">RequestLab — HTTP Analiz Aracı</h3>
+          <p class="project-desc">
+            HTTP isteklerini yakalayan, değiştiren ve tekrar oynatan Chrome DevTools uzantısı. Kural motoru, cURL/fetch/Python dışa aktarma ve WebSocket izleme sunuyor.
+          </p>
+          <div class="project-techs">
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">Chrome DevTools</span>
+            <span class="tech-badge">CDP</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Adilnasceng/requestlab" target="_blank" rel="noopener" class="btn-ghost">&#128279; GitHub</a>
+            <button class="btn-detail" onclick="openModal('requestlab')">&#128269; Detaylar</button>
           </div>
         </div>
       </div>
@@ -2207,8 +2347,8 @@
           <div class="skill-bar"><div class="skill-bar-fill" data-pct="88"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-meta"><span class="skill-name">Jetson / LIDAR</span><span class="skill-pct">72%</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" data-pct="72"></div></div>
+          <div class="skill-meta"><span class="skill-name">LIDAR / IMU / Sensör Entegrasyonu</span><span class="skill-pct">82%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-pct="82"></div></div>
         </div>
       </div>
 
@@ -2230,7 +2370,7 @@
           <div class="skill-bar"><div class="skill-bar-fill" data-pct="72"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-meta"><span class="skill-name">ML / Deep Learning</span><span class="skill-pct">70%</span></div>
+          <div class="skill-meta"><span class="skill-name">ML / Deep Learning</span><span class="skill-pct">72%</span></div>
           <div class="skill-bar"><div class="skill-bar-fill" data-pct="72"></div></div>
         </div>
       </div>
@@ -2491,6 +2631,7 @@
         <a href="https://www.linkedin.com/in/adilnas/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
         <a href="https://www.instagram.com/adil.nas/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
         <a href="mailto:adilnasceng@gmail.com" class="social-link" aria-label="Email"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
+        <a href="https://github.com/sponsors/Adilnasceng" target="_blank" rel="noopener" class="social-link sponsor-link" aria-label="GitHub Sponsors" title="Sponsor"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></a>
       </div>
     </div>
   </footer>
@@ -2617,6 +2758,120 @@
 
         <div class="modal-links">
           <a href="https://github.com/Adilnasceng/Digital-signature-verifier" target="_blank" rel="noopener" class="btn-ghost">&#128279; GitHub'da Gör</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Multi-Robot Warehouse Modal -->
+  <div class="modal-overlay" id="modal-warehouse" role="dialog" aria-modal="true" aria-label="Çoklu Robot Depo Proje Detayları">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title">🏭 Çoklu Robot Depo Otomasyonu</div>
+        <button class="modal-close" onclick="closeModal('warehouse')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-screenshot"><svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-light)"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+        <div class="modal-section-title">Proje Hakkında</div>
+        <p class="modal-desc">Gazebo Classic 11 üzerinde 4 AGV'li tam otonom depo simülasyonu. Merkezi filo yöneticisi görevleri Greedy veya Hungarian algoritmasıyla atıyor; Conflict-Based Search (CBS) ile robotlar çarpışmadan eş zamanlı rota planlıyor. Şarjı %20'nin altına düşen robot otomatik şarj istasyonuna yöneliyor.</p>
+
+        <div class="modal-section-title">Özellikler</div>
+        <ul class="modal-features">
+          <li>4 AGV ile eş zamanlı otonom görev yürütme</li>
+          <li>Greedy O(n) / Hungarian O(n³) görev atama algoritmaları</li>
+          <li>CBS + A* ile çarpışmasız çoklu robot rota planlama</li>
+          <li>Batarya yönetimi ve otomatik şarj istasyonu davranışı</li>
+          <li>Nav2 + SLAM Toolbox navigasyon altyapısı</li>
+          <li>Flask/SocketIO ile canlı web izleme paneli (1Hz telemetri)</li>
+          <li>6 ROS2 paketi, Docker Compose ile dağıtım</li>
+        </ul>
+
+        <div class="modal-section-title">Teknoloji Stack</div>
+        <div class="modal-tech-stack">
+          <span class="tech-badge">ROS2 Humble</span>
+          <span class="tech-badge">Gazebo</span>
+          <span class="tech-badge">Nav2</span>
+          <span class="tech-badge">SLAM Toolbox</span>
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">Flask / SocketIO</span>
+          <span class="tech-badge">Docker</span>
+        </div>
+
+        <div class="modal-links">
+          <a href="https://github.com/Adilnasceng/multi-robot-warehouse" target="_blank" rel="noopener" class="btn-ghost">&#128279; GitHub'da Gör</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ShieldBlock Modal -->
+  <div class="modal-overlay" id="modal-shieldblock" role="dialog" aria-modal="true" aria-label="ShieldBlock Proje Detayları">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title">🛡️ ShieldBlock — Reklam Engelleyici</div>
+        <button class="modal-close" onclick="closeModal('shieldblock')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-screenshot"><svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-light)"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>
+        <div class="modal-section-title">Proje Hakkında</div>
+        <p class="modal-desc">Üretim kalitesinde Chrome MV3 reklam engelleyici uzantı. Reklam, izleyici ve kripto madencilerine karşı 220+ kural içeriyor; 50'den fazla framework'ün çerez bildirimini otomatik temizliyor ve anti-adblock tespitlerini atlatıyor. Türkçe ve İngilizce arayüz.</p>
+
+        <div class="modal-section-title">Özellikler</div>
+        <ul class="modal-features">
+          <li>declarativeNetRequest ile 220+ engelleme kuralı</li>
+          <li>Reklam / izleyici / kripto madenci engelleme</li>
+          <li>50+ framework için çerez bildirimi temizleme</li>
+          <li>Anti-adblock tespit atlatma</li>
+          <li>MutationObserver ile kozmetik filtreleme</li>
+          <li>TR/EN çift dilli arayüz</li>
+        </ul>
+
+        <div class="modal-section-title">Teknoloji Stack</div>
+        <div class="modal-tech-stack">
+          <span class="tech-badge">JavaScript</span>
+          <span class="tech-badge">Chrome MV3</span>
+          <span class="tech-badge">declarativeNetRequest</span>
+          <span class="tech-badge">MutationObserver</span>
+        </div>
+
+        <div class="modal-links">
+          <a href="https://github.com/Adilnasceng/shieldblock" target="_blank" rel="noopener" class="btn-ghost">&#128279; GitHub'da Gör</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RequestLab Modal -->
+  <div class="modal-overlay" id="modal-requestlab" role="dialog" aria-modal="true" aria-label="RequestLab Proje Detayları">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title">🔬 RequestLab — HTTP Analiz Aracı</div>
+        <button class="modal-close" onclick="closeModal('requestlab')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-screenshot"><svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-light)"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></div>
+        <div class="modal-section-title">Proje Hakkında</div>
+        <p class="modal-desc">Chrome DevTools içinde çalışan MV3 uzantısı: HTTP isteklerini chrome.debugger (CDP) üzerinden yakalıyor, değiştiriyor ve tekrar oynatıyor. API tersine mühendisliği ve backend testleri için kural motoru, dışa aktarma araçları ve WebSocket izleme sunuyor.</p>
+
+        <div class="modal-section-title">Özellikler</div>
+        <ul class="modal-features">
+          <li>HTTP isteklerini yakalama, değiştirme ve tekrar oynatma</li>
+          <li>Koşullu kural motoru ile otomatik istek manipülasyonu</li>
+          <li>cURL / fetch / Python koduna dışa aktarma</li>
+          <li>WebSocket trafiği izleme</li>
+          <li>CodeMirror ile istek/yanıt düzenleme</li>
+        </ul>
+
+        <div class="modal-section-title">Teknoloji Stack</div>
+        <div class="modal-tech-stack">
+          <span class="tech-badge">JavaScript</span>
+          <span class="tech-badge">Chrome DevTools</span>
+          <span class="tech-badge">CDP (chrome.debugger)</span>
+          <span class="tech-badge">CodeMirror</span>
+        </div>
+
+        <div class="modal-links">
+          <a href="https://github.com/Adilnasceng/requestlab" target="_blank" rel="noopener" class="btn-ghost">&#128279; GitHub'da Gör</a>
         </div>
       </div>
     </div>
@@ -3092,7 +3347,7 @@
     (function() {
       var translations = {
         tr: {
-          nav: ['Hakkımda', 'Deneyim', 'Projeler', 'Beceriler', 'Sertifikalar', 'İletişim'],
+          nav: ['Hakkımda', 'Deneyim', 'Eğitim', 'Projeler', 'Beceriler', 'Sertifikalar', 'İletişim'],
           hero: {
             badge: 'Merhaba, ben',
             desc: 'Robotik ve yapay zekanın kesişiminde yazılım geliştiriyorum. ROS2, SLAM ve otonom sistemler üzerine çalışıyor; makine öğrenmesini gerçek dünya problemlerine uygulamaktan keyif alıyorum.',
@@ -3103,17 +3358,29 @@
             title: 'Merhaba! Ben <span>Adil NAS</span>',
             stats: ['Yıl Deneyim', 'Proje', 'Yayın'],
             p1: 'Bilgisayar Mühendisi (YZ & Robotik), lisansımı onur derecesiyle tamamladım. Sivas Cumhuriyet Üniversitesi\'nde Bilgisayar Mühendisliği alanında Yüksek Lisans yapıyorum. Yazılım geliştirme, robotik ve otonom sistemlere duyduğum tutkuyla sürekli yeni teknolojiler öğrenmeye çalışıyorum.',
-            p2: 'Teknofest "Sanayide Dijital Teknolojiler" yarışmasında (İleri Kategori) üniversite ekibimi yönettim; otonom robotumuzla Türkiye 2.\'si olduk. Projenin tüm ROS2 yazılımını, SLAM ve otonom navigasyon sistemlerini geliştirdim.',
+            p2: 'Teknofest "Sanayide Dijital Teknolojiler" yarışmasında (İleri Kategori) üniversite ekibimi yönettim; otonom robotumuzla Türkiye 2.\'si olduk. Projenin tüm ROS2 yazılımını, SLAM ve otonom navigasyon sistemlerini geliştirdim. Şu anda aynı ekiple fabrika içi lojistik için otonom forklift AGV geliştiriyoruz.',
             p3: 'Samsung Innovation Campus\'ta Yapay Zeka eğitimi tamamladım. Makine Öğrenmesi, Derin Öğrenme ve LLM orkestrasyon araçları (Ollama, CrewAI, LangChain) konularında kapsamlı deneyim kazandım.'
           },
           experience: {
             label: '// deneyim', title: 'Kariyer <span>Yolculuğum</span>',
             subtitle: 'Profesyonel deneyimlerim ve büyük projelerde edindiğim kazanımlar.',
             items: [
-              { date: 'Haziran 2025 — Günümüz', desc: 'Makine Öğrenmesi ve Derin Öğrenme temelleri üzerine kapsamlı eğitim. Python ile veri analizi ve model oluşturma. Ollama, CrewAI ve LangChain ile LLM orkestrasyon araçları deneyimi. Uçtan uca yapay zeka projesi geliştirme.' },
-              { date: 'Eylül 2024 — Haziran 2025', desc: 'Teknofest yarışmasında (İleri Kategori) Türkiye 2.\'si olan otonom robotu geliştirdim. Tüm ROS2 yazılımını, SLAM Toolbox ve Nav2 ile sensör entegrasyonunu implemente ettim. Tüm yazılım sürecini uçtan uca geliştirdim; donanım ve elektroniğe de katkı sağladım.' },
-              { date: 'Temmuz — Ağustos 2024', desc: 'C++ ile dosya arama ve kötü amaçlı yazılım tespit algoritmaları. Sertifika tarama projesi. Tauri ortamında Svelte ve Rust kullanarak tam yığın masaüstü uygulaması geliştirdim.' }
+              { date: '2026 — Günümüz', role: 'Robotics & AI Team Lead', company: 'Otonom Forklift AGV — Fabrika İçi Lojistik', desc: 'Teknofest 2.\'liğinin ardından aynı ekiple fabrika içi lojistik için otonom forklift AGV geliştiriyorum. Haritalama, rota takibi, engel algılama, PLC/fabrika otomasyonu haberleşmesi, görüntü tabanlı çizgi takibi ve QR kod ile konumlandırma üzerinde çalışıyorum.' },
+              { date: 'Temmuz — Kasım 2025', role: 'AI Trainee', company: 'Samsung Innovation Campus', desc: 'Makine Öğrenmesi ve Derin Öğrenme temelleri üzerine kapsamlı eğitim. Python ile veri analizi ve model oluşturma. Ollama, CrewAI ve LangChain ile LLM orkestrasyon araçları deneyimi. Uçtan uca yapay zeka projesi geliştirme.' },
+              { date: 'Eylül 2024 — Haziran 2025', role: 'Robotics & AI Team Lead', company: 'Teknofest — Sanayide Dijital Teknolojiler', desc: 'Teknofest yarışmasında (İleri Kategori) Türkiye 2.\'si olan otonom robotu geliştirdim. Tüm ROS2 yazılımını, SLAM Toolbox ve Nav2 ile sensör entegrasyonunu implemente ettim. Tüm yazılım sürecini uçtan uca geliştirdim; donanım ve elektroniğe de katkı sağladım.' },
+              { date: 'Temmuz — Ağustos 2024', role: 'Software Intern', company: 'C-Prot — Mersin', desc: 'C++ ile dosya arama ve kötü amaçlı yazılım tespit algoritmaları. Sertifika tarama projesi. Tauri ortamında Svelte ve Rust kullanarak tam yığın masaüstü uygulaması geliştirdim.' }
             ]
+          },
+          education: {
+            label: '// eğitim & yayın', title: 'Eğitim & <span>Yayın</span>',
+            subtitle: 'Akademik geçmişim ve yayınlanmış çalışmam.',
+            items: [
+              { title: 'Yüksek Lisans — Bilgisayar Mühendisliği', issuer: 'Sivas Cumhuriyet Üniversitesi · GPA 3.75/4.00 · Tez: Ses, görüntü ve mekânsal sensör veri füzyonuyla otonom mobil robot navigasyonu', date: 'Eyl 2025 — Devam' },
+              { title: 'Lisans — Bilgisayar Mühendisliği', issuer: 'Sivas Cumhuriyet Üniversitesi · GPA 3.03/4.00 · Onur Derecesi', date: 'Eyl 2021 — Haz 2025' },
+              { title: 'Comparative Analysis of Data Balancing and Dimensionality Reduction Strategies in Software Defect Prediction', issuer: 'NAS, A.; Kekül, H.; Yüksek, A. G. — ICIAS 2026 (Uluslararası Konferans)', date: '2026' },
+              { title: 'IoT-Enhanced MIS Architectures for Autonomous Robotic Systems', issuer: 'NAS, A.; Mandacı, E. D.; Yüksek, A. G. — Kitap Bölümü', date: '2025' }
+            ],
+            viewBtn: 'Görüntüle'
           },
           projects: {
             label: '// projeler', title: 'Öne Çıkan <span>Projeler</span>',
@@ -3121,7 +3388,10 @@
             items: [
               { title: 'AGV — Doğal Navigasyon & Haritalama', desc: 'Raspberry Pi 4/5 ve ROS2 Humble ile geliştirilen otonom güdümlü araç. SLAM tabanlı haritalama, engel kaçınma ve LIDAR kullanan bölge tespiti içeriyor. Teknofest\'te Türkiye 2.\'si.' },
               { title: 'Otonom Çizgi Takip Eden Robot', desc: 'Raspberry Pi 4/5 ve kamera ile kara çizgiyi takip eden mobil robot. Roboflow ile eğitilmiş ML modeli sayesinde çizgi ayrışmalarını tespit ederek yön belirliyor.' },
-              { title: 'Güvenlik Analiz Masaüstü Uygulaması', desc: 'C-Prot stajında Tauri + Svelte + Rust ile geliştirilen tam yığın masaüstü uygulaması. Dosya arama, kötü amaçlı yazılım tespiti ve sertifika tarama algoritmaları içeriyor.' }
+              { title: 'Güvenlik Analiz Masaüstü Uygulaması', desc: 'C-Prot stajında Tauri + Svelte + Rust ile geliştirilen tam yığın masaüstü uygulaması. Dosya arama, kötü amaçlı yazılım tespiti ve sertifika tarama algoritmaları içeriyor.' },
+              { title: 'Çoklu Robot Depo Otomasyonu', desc: 'Gazebo\'da 4 AGV\'li tam otonom depo simülasyonu. Merkezi filo yöneticisi, Hungarian/Greedy görev atama, CBS ile çarpışmasız rota planlama ve web tabanlı canlı izleme paneli.' },
+              { title: 'ShieldBlock — Reklam Engelleyici', desc: '220+ kurallı üretim kalitesinde Chrome MV3 reklam engelleyici. Çerez bildirimi temizleme (50+ framework), anti-adblock atlatma ve kozmetik filtreleme içeriyor.' },
+              { title: 'RequestLab — HTTP Analiz Aracı', desc: 'HTTP isteklerini yakalayan, değiştiren ve tekrar oynatan Chrome DevTools uzantısı. Kural motoru, cURL/fetch/Python dışa aktarma ve WebSocket izleme sunuyor.' }
             ],
             detailBtn: '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:4px"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Detaylar'
           },
@@ -3175,12 +3445,27 @@
               modalTitle: 'Güvenlik Analiz Masaüstü Uygulaması',
               desc: 'C-Prot stajında geliştirilen tam yığın masaüstü güvenlik uygulaması. Tauri + Svelte (frontend) ve Rust + C++ (backend) mimarisiyle inşa edildi. Dosya arama, kötü amaçlı yazılım tespiti ve sertifika tarama özellikleri sunuyor.',
               features: ['C++ ile gelişmiş dosya arama algoritması', 'Kötü amaçlı yazılım tespit motoru', 'Dosyalardaki sertifika tarama ve doğrulama', 'Svelte ile modern ve hızlı kullanıcı arayüzü', 'Rust backend ile yüksek performanslı işlemler', 'Tauri ile çapraz platform masaüstü dağıtımı']
+            },
+            warehouse: {
+              modalTitle: 'Çoklu Robot Depo Otomasyonu',
+              desc: 'Gazebo Classic 11 üzerinde 4 AGV\'li tam otonom depo simülasyonu. Merkezi filo yöneticisi görevleri Greedy veya Hungarian algoritmasıyla atıyor; Conflict-Based Search (CBS) ile robotlar çarpışmadan eş zamanlı rota planlıyor. Şarjı %20\'nin altına düşen robot otomatik şarj istasyonuna yöneliyor.',
+              features: ['4 AGV ile eş zamanlı otonom görev yürütme', 'Greedy O(n) / Hungarian O(n³) görev atama algoritmaları', 'CBS + A* ile çarpışmasız çoklu robot rota planlama', 'Batarya yönetimi ve otomatik şarj istasyonu davranışı', 'Nav2 + SLAM Toolbox navigasyon altyapısı', 'Flask/SocketIO ile canlı web izleme paneli (1Hz telemetri)', '6 ROS2 paketi, Docker Compose ile dağıtım']
+            },
+            shieldblock: {
+              modalTitle: 'ShieldBlock — Reklam Engelleyici',
+              desc: 'Üretim kalitesinde Chrome MV3 reklam engelleyici uzantı. Reklam, izleyici ve kripto madencilerine karşı 220+ kural içeriyor; 50\'den fazla framework\'ün çerez bildirimini otomatik temizliyor ve anti-adblock tespitlerini atlatıyor. Türkçe ve İngilizce arayüz.',
+              features: ['declarativeNetRequest ile 220+ engelleme kuralı', 'Reklam / izleyici / kripto madenci engelleme', '50+ framework için çerez bildirimi temizleme', 'Anti-adblock tespit atlatma', 'MutationObserver ile kozmetik filtreleme', 'TR/EN çift dilli arayüz']
+            },
+            requestlab: {
+              modalTitle: 'RequestLab — HTTP Analiz Aracı',
+              desc: 'Chrome DevTools içinde çalışan MV3 uzantısı: HTTP isteklerini chrome.debugger (CDP) üzerinden yakalıyor, değiştiriyor ve tekrar oynatıyor. API tersine mühendisliği ve backend testleri için kural motoru, dışa aktarma araçları ve WebSocket izleme sunuyor.',
+              features: ['HTTP isteklerini yakalama, değiştirme ve tekrar oynatma', 'Koşullu kural motoru ile otomatik istek manipülasyonu', 'cURL / fetch / Python koduna dışa aktarma', 'WebSocket trafiği izleme', 'CodeMirror ile istek/yanıt düzenleme']
             }
           },
           backToTop: 'Yukarı çık'
         },
         en: {
-          nav: ['About', 'Experience', 'Projects', 'Skills', 'Certificates', 'Contact'],
+          nav: ['About', 'Experience', 'Education', 'Projects', 'Skills', 'Certificates', 'Contact'],
           hero: {
             badge: "Hi, I'm",
             desc: "I build software at the intersection of robotics and artificial intelligence. I work on ROS2, SLAM and autonomous systems — and enjoy applying machine learning to real-world problems.",
@@ -3189,19 +3474,31 @@
           about: {
             label: '// about',
             title: "Hello! I'm <span>Adil NAS</span>",
-            stats: ['Years of Experience', 'Projects', 'Publication'],
+            stats: ['Years of Experience', 'Projects', 'Publications'],
             p1: 'Computer Engineer (AI & Robotics), graduated with honors from undergraduate. I am pursuing an M.Sc. in Computer Engineering at Sivas Cumhuriyet University. I am passionate about software development, robotics, and autonomous systems, constantly striving to learn new technologies.',
-            p2: 'I led my university\'s team in the Teknofest "Digital Technologies in Industry" competition (Advanced Category), achieving 2nd place in Turkey with an autonomous robot. I developed all ROS2 software, SLAM and autonomous navigation systems.',
+            p2: 'I led my university\'s team in the Teknofest "Digital Technologies in Industry" competition (Advanced Category), achieving 2nd place in Turkey with an autonomous robot. I developed all ROS2 software, SLAM and autonomous navigation systems. We are currently building an autonomous forklift AGV for in-factory logistics with the same team.',
             p3: 'I completed an AI training at Samsung Innovation Campus, gaining extensive experience in Machine Learning, Deep Learning, and LLM orchestration tools (Ollama, CrewAI, LangChain).'
           },
           experience: {
             label: '// experience', title: 'My Career <span>Journey</span>',
             subtitle: 'My professional experience and accomplishments in large-scale projects.',
             items: [
-              { date: 'June 2025 — Present', desc: 'Comprehensive training on Machine Learning and Deep Learning fundamentals. Python for data analysis and model building. Experience with LLM orchestration tools including Ollama, CrewAI and LangChain. Developed and presented an end-to-end AI project.' },
-              { date: 'September 2024 — June 2025', desc: 'Led the development of an autonomous robot that achieved 2nd place in the Teknofest competition (Advanced Category). Implemented all ROS2-based software including SLAM Toolbox and Nav2. Developed the entire software process end-to-end; also contributed to hardware and electronics.' },
-              { date: 'July — August 2024', desc: 'Developed file search and malware detection algorithms in C++. Created a certificate scanning project. Built a full-stack desktop application using Svelte and Rust within the Tauri environment.' }
+              { date: '2026 — Present', role: 'Robotics & AI Team Lead', company: 'Autonomous Forklift AGV — In-Factory Logistics', desc: 'After our Teknofest 2nd place, I\'m leading the same team building an autonomous forklift AGV for in-factory logistics. Working on mapping, route following, obstacle detection, PLC/factory-automation communication, vision-based line following and QR-code localization.' },
+              { date: 'July — November 2025', role: 'AI Trainee', company: 'Samsung Innovation Campus', desc: 'Comprehensive training on Machine Learning and Deep Learning fundamentals. Python for data analysis and model building. Experience with LLM orchestration tools including Ollama, CrewAI and LangChain. Developed and presented an end-to-end AI project.' },
+              { date: 'September 2024 — June 2025', role: 'Robotics & AI Team Lead', company: 'Teknofest — Digital Technologies in Industry', desc: 'Led the development of an autonomous robot that achieved 2nd place in the Teknofest competition (Advanced Category). Implemented all ROS2-based software including SLAM Toolbox and Nav2. Developed the entire software process end-to-end; also contributed to hardware and electronics.' },
+              { date: 'July — August 2024', role: 'Software Intern', company: 'C-Prot — Mersin', desc: 'Developed file search and malware detection algorithms in C++. Created a certificate scanning project. Built a full-stack desktop application using Svelte and Rust within the Tauri environment.' }
             ]
+          },
+          education: {
+            label: '// education & publication', title: 'Education & <span>Publication</span>',
+            subtitle: 'My academic background and published work.',
+            items: [
+              { title: 'M.Sc. — Computer Engineering', issuer: 'Sivas Cumhuriyet University · GPA 3.75/4.00 · Thesis: Autonomous mobile robot navigation based on audio, visual and spatial sensor data fusion', date: 'Sep 2025 — Present' },
+              { title: 'B.Sc. — Computer Engineering', issuer: 'Sivas Cumhuriyet University · GPA 3.03/4.00 · Honors Graduate', date: 'Sep 2021 — Jun 2025' },
+              { title: 'Comparative Analysis of Data Balancing and Dimensionality Reduction Strategies in Software Defect Prediction', issuer: 'NAS, A.; Kekül, H.; Yüksek, A. G. — ICIAS 2026 (International Conference)', date: '2026' },
+              { title: 'IoT-Enhanced MIS Architectures for Autonomous Robotic Systems', issuer: 'NAS, A.; Mandacı, E. D.; Yüksek, A. G. — Book Chapter', date: '2025' }
+            ],
+            viewBtn: 'View'
           },
           projects: {
             label: '// projects', title: 'Featured <span>Projects</span>',
@@ -3209,7 +3506,10 @@
             items: [
               { title: 'AGV — Natural Navigation & Mapping', desc: 'Autonomous guided vehicle built with Raspberry Pi 4/5 and ROS2 Humble. Features SLAM-based mapping, obstacle avoidance and LIDAR-based zone detection. 2nd place in Teknofest.' },
               { title: 'Autonomous Line-Following Robot', desc: 'Mobile robot using Raspberry Pi 4/5 and camera to follow a black stripe. An ML model trained with Roboflow detects line splits and determines direction.' },
-              { title: 'Security Analysis Desktop App', desc: 'Full-stack desktop security app built with Tauri + Svelte + Rust during C-Prot internship. Features file search, malware detection and certificate scanning algorithms.' }
+              { title: 'Security Analysis Desktop App', desc: 'Full-stack desktop security app built with Tauri + Svelte + Rust during C-Prot internship. Features file search, malware detection and certificate scanning algorithms.' },
+              { title: 'Multi-Robot Warehouse Automation', desc: 'Fully autonomous warehouse simulation with 4 AGVs in Gazebo. Centralized fleet manager, Hungarian/Greedy task allocation, collision-free planning with CBS and a live web dashboard.' },
+              { title: 'ShieldBlock — Ad Blocker', desc: 'Production-grade Chrome MV3 ad blocker with 220+ rules. Features cookie banner removal (50+ frameworks), anti-adblock bypass and cosmetic filtering.' },
+              { title: 'RequestLab — HTTP Analysis Tool', desc: 'Chrome DevTools extension to intercept, modify and replay HTTP requests. Offers a rules engine, cURL/fetch/Python export and WebSocket monitoring.' }
             ],
             detailBtn: '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:4px"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Details'
           },
@@ -3263,6 +3563,21 @@
               modalTitle: 'Security Analysis Desktop App',
               desc: 'Full-stack desktop security application developed during the C-Prot internship. Built with Tauri + Svelte (frontend) and Rust + C++ (backend) architecture. Provides file search, malware detection and certificate scanning features.',
               features: ['Advanced file search algorithm in C++', 'Malware detection engine', 'Certificate scanning and validation in files', 'Modern and fast UI with Svelte', 'High-performance operations with Rust backend', 'Cross-platform desktop distribution with Tauri']
+            },
+            warehouse: {
+              modalTitle: 'Multi-Robot Warehouse Automation',
+              desc: 'Fully autonomous warehouse simulation with 4 AGVs on Gazebo Classic 11. A centralized fleet manager allocates tasks via Greedy or Hungarian algorithms; Conflict-Based Search (CBS) plans simultaneous collision-free routes. Robots below 20% battery automatically head to the charging station.',
+              features: ['Simultaneous autonomous task execution with 4 AGVs', 'Greedy O(n) / Hungarian O(n³) task allocation algorithms', 'Collision-free multi-robot planning with CBS + A*', 'Battery management with automatic charging behavior', 'Nav2 + SLAM Toolbox navigation stack', 'Live web dashboard with Flask/SocketIO (1Hz telemetry)', '6 ROS2 packages, deployed with Docker Compose']
+            },
+            shieldblock: {
+              modalTitle: 'ShieldBlock — Ad Blocker',
+              desc: 'Production-grade Chrome MV3 ad blocker extension. Includes 220+ rules against ads, trackers and crypto miners; automatically removes cookie banners from 50+ frameworks and bypasses anti-adblock detection. Turkish and English UI.',
+              features: ['220+ blocking rules via declarativeNetRequest', 'Ad / tracker / crypto miner blocking', 'Cookie banner removal for 50+ frameworks', 'Anti-adblock detection bypass', 'Cosmetic filtering with MutationObserver', 'Bilingual TR/EN interface']
+            },
+            requestlab: {
+              modalTitle: 'RequestLab — HTTP Analysis Tool',
+              desc: 'MV3 extension running inside Chrome DevTools: intercepts, modifies and replays HTTP requests via chrome.debugger (CDP). Offers a rules engine, export tools and WebSocket monitoring for API reverse-engineering and backend testing.',
+              features: ['Intercept, modify and replay HTTP requests', 'Conditional rules engine for automatic request manipulation', 'Export to cURL / fetch / Python code', 'WebSocket traffic monitoring', 'Request/response editing with CodeMirror']
             }
           },
           backToTop: 'Back to top'
@@ -3336,9 +3651,35 @@
         if (el) el.textContent = t.experience.subtitle;
         var tlDates = inSecAll('experience', '.timeline-date');
         var tlDescs = inSecAll('experience', '.timeline-desc');
+        var tlRoles = inSecAll('experience', '.timeline-role');
+        var tlComps = inSecAll('experience', '.timeline-company');
         t.experience.items.forEach(function(item, i) {
           if (tlDates[i]) tlDates[i].textContent = item.date;
           if (tlDescs[i]) tlDescs[i].textContent = item.desc;
+          if (tlRoles[i] && item.role) tlRoles[i].textContent = item.role;
+          if (tlComps[i] && item.company) tlComps[i].textContent = item.company;
+        });
+
+        // EDUCATION & PUBLICATION
+        el = inSec('education', '.section-label');
+        if (el) el.textContent = t.education.label;
+        el = inSec('education', '.section-title');
+        if (el) el.innerHTML = t.education.title;
+        el = inSec('education', '.section-subtitle');
+        if (el) el.textContent = t.education.subtitle;
+        var eduTitles = inSecAll('education', '.cert-title');
+        var eduIssuers = inSecAll('education', '.cert-issuer');
+        var eduDates = inSecAll('education', '.cert-date');
+        t.education.items.forEach(function(item, i) {
+          if (eduTitles[i]) eduTitles[i].textContent = item.title;
+          if (eduIssuers[i]) eduIssuers[i].textContent = item.issuer;
+          if (eduDates[i]) {
+            var svg = eduDates[i].querySelector('svg');
+            eduDates[i].innerHTML = (svg ? svg.outerHTML : '') + item.date;
+          }
+        });
+        inSecAll('education', '.btn-cert').forEach(function(btn) {
+          btn.innerHTML = '&#128279; ' + t.education.viewBtn;
         });
 
         // PROJECTS
@@ -3414,7 +3755,7 @@
         if (footerCopy) footerCopy.innerHTML = t.footer.copy;
 
         // MODALS
-        ['agv', 'linerobot', 'secapp'].forEach(function(id) {
+        ['agv', 'linerobot', 'secapp', 'warehouse', 'shieldblock', 'requestlab'].forEach(function(id) {
           var modal = document.getElementById('modal-' + id);
           if (!modal) return;
           var mt = t.modals[id];

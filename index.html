@@ -1867,6 +1867,112 @@
 
     /* Selection */
     ::selection { background: rgba(108,92,231,0.35); color: #fff; }
+    /* =====================================================
+       FEATURED PROJECT + VIDEO
+    ===================================================== */
+    .project-card-featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+    }
+
+    .project-card-featured .project-img {
+      aspect-ratio: 16/9;
+      align-self: center;
+    }
+
+    .project-img-photo {
+      padding: 0;
+      border: 0;
+      cursor: pointer;
+      background: #000;
+    }
+
+    .project-img-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition);
+    }
+
+    .project-card:hover .project-img-photo img { transform: scale(1.03); }
+
+    .project-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #fff;
+      background: var(--accent);
+      border-radius: 999px;
+    }
+
+    .video-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      width: 68px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: rgba(0,0,0,0.65);
+      border-radius: 12px;
+      transition: background var(--transition);
+    }
+
+    .project-img-photo:hover .video-play,
+    .video-facade:hover .video-play { background: var(--accent); }
+
+    .video-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      margin-bottom: 1.5rem;
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .video-facade {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      border: 0;
+      cursor: pointer;
+      background: #000;
+    }
+
+    .video-facade img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-box iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    button.btn-ghost { cursor: pointer; font-family: inherit; }
+
+    @media (max-width: 900px) {
+      .project-card-featured { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -2189,6 +2295,31 @@
     <p class="section-subtitle">Gerçek problemlere gerçek çözümler. İşte en çok gurur duyduğum projelerim.</p>
 
     <div class="projects-grid">
+      <!-- Project 0: Forklift AGV (featured, video) -->
+      <div class="project-card project-card-featured reveal">
+        <button type="button" class="project-img project-img-photo" onclick="openModal('forklift'); playVideo('forklift')" aria-label="TEKNOFEST 2026 yarışma videosunu izle">
+          <img src="img/forklift-agv-video.jpg" alt="Yiğido Ekibi - TEKNOFEST 2026 Otonom Forklift AGV yarışma videosu" loading="lazy" />
+          <span class="project-badge">TEKNOFEST 2026 · Türkiye 2.'si</span>
+          <span class="video-play"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="7 4 20 12 7 20 7 4"/></svg></span>
+        </button>
+        <div class="project-body">
+          <h3 class="project-title">Otonom Forklift AGV</h3>
+          <p class="project-desc">
+            Fabrika içi lojistik için Jetson Orin Nano + STM32 tabanlı otonom forklift. Graf tabanlı haritalama, dinamik engel algılama, QR ve şerit takibiyle hassas yanaşma, PLC haberleşmesi. TEKNOFEST 2026'da Türkiye 2.'si.
+          </p>
+          <div class="project-techs">
+            <span class="tech-badge">ROS2</span>
+            <span class="tech-badge">Jetson Orin Nano</span>
+            <span class="tech-badge">STM32</span>
+            <span class="tech-badge">LiDAR</span>
+          </div>
+          <div class="project-actions">
+            <button type="button" class="btn-ghost btn-video" onclick="openModal('forklift'); playVideo('forklift')"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:4px"><polygon points="7 4 20 12 7 20 7 4"/></svg> Videoyu İzle</button>
+            <button class="btn-detail" onclick="openModal('forklift')">&#128269; Detaylar</button>
+          </div>
+        </div>
+      </div>
+
       <!-- Project 1: AGV -->
       <div class="project-card reveal">
         <div class="project-img project-img-ecommerce"><svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-light)"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="12" y1="16" x2="12" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg></div>
@@ -2662,6 +2793,55 @@
   <!-- =====================================================
        MODALS
   ===================================================== -->
+
+  <!-- Forklift AGV Modal -->
+  <div class="modal-overlay" id="modal-forklift" role="dialog" aria-modal="true" aria-label="Otonom Forklift AGV Proje Detayları">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title">Otonom Forklift AGV — TEKNOFEST 2026</div>
+        <button class="modal-close" onclick="closeModal('forklift')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="video-box" data-video="c8usVsRsF28" data-title="Teknofest 2026 YİĞİDO-AGV Sanayide Robotik Uygulamalar Yarışması Videosu">
+          <button type="button" class="video-facade" onclick="playVideo('forklift')" aria-label="Videoyu oynat">
+            <img src="img/forklift-agv-video.jpg" alt="Teknofest 2026 YİĞİDO-AGV Sanayide Robotik Uygulamalar Yarışması Videosu" loading="lazy" />
+            <span class="video-play"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="7 4 20 12 7 20 7 4"/></svg></span>
+          </button>
+        </div>
+        <div class="modal-section-title">Proje Hakkında</div>
+        <p class="modal-desc">Yiğido Ekibi olarak fabrika içi lojistik için geliştirdiğimiz otonom forklift AGV. TEKNOFEST 2026 Sanayide Robotik Uygulamalar Yarışması'nda Türkiye 2.'si oldu — art arda ikinci ikinciliğimiz. Ekip lideri olarak sistemin elektronik, donanım ve yazılımını uçtan uca tasarladım; ekip içi görev planlamasını yürüttüm.</p>
+
+        <div class="modal-section-title">Özellikler</div>
+        <ul class="modal-features">
+          <li>Jetson Orin Nano ana kontrolcü, STM32 ile sensör işleme</li>
+          <li>Graf tabanlı rota kaydı ve haritalama</li>
+          <li>LiDAR / enkoder / IMU ile konumlandırma</li>
+          <li>Haritaya duyarlı dinamik engel algılama</li>
+          <li>QR kod konumlandırma ve renkli kamera ile şerit takibiyle hassas yanaşma</li>
+          <li>Düşük bataryada şarj istasyonuna otomatik yanaşma</li>
+          <li>Kapı geçiş talepleri için PLC haberleşmesi</li>
+          <li>Sesli, LED ve GUI geri bildirimli durum sistemi (yüklü, yüksüz, eve dönüş, acil durdurma)</li>
+          <li>Otonom, joystick ve manuel kontrolü destekleyen Wi-Fi arayüzü</li>
+        </ul>
+
+        <div class="modal-section-title">Teknoloji Stack</div>
+        <div class="modal-tech-stack">
+          <span class="tech-badge">ROS2</span>
+          <span class="tech-badge">Jetson Orin Nano</span>
+          <span class="tech-badge">STM32</span>
+          <span class="tech-badge">LiDAR</span>
+          <span class="tech-badge">IMU</span>
+          <span class="tech-badge">Computer Vision</span>
+          <span class="tech-badge">QR Localization</span>
+          <span class="tech-badge">PLC</span>
+        </div>
+
+        <div class="modal-links">
+          <a href="https://youtu.be/c8usVsRsF28" target="_blank" rel="noopener" class="btn-ghost link-youtube"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg> YouTube'da İzle</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- AGV Modal -->
   <div class="modal-overlay" id="modal-agv" role="dialog" aria-modal="true" aria-label="AGV Proje Detayları">
@@ -3275,6 +3455,27 @@
       if (!overlay) return;
       overlay.classList.remove('open');
       document.body.style.overflow = '';
+      stopVideos(overlay);
+    }
+
+    /* YouTube facade: the player loads only after the user presses play */
+    function playVideo(id) {
+      const box = document.querySelector('#modal-' + id + ' .video-box');
+      if (!box || box.querySelector('iframe')) return;
+      if (!box.dataset.facade) box.dataset.facade = box.innerHTML;
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + box.dataset.video + '?autoplay=1&rel=0';
+      iframe.title = box.dataset.title;
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      box.innerHTML = '';
+      box.appendChild(iframe);
+    }
+
+    function stopVideos(overlay) {
+      overlay.querySelectorAll('.video-box').forEach(function(box) {
+        if (box.dataset.facade) box.innerHTML = box.dataset.facade;
+      });
     }
 
     // Click outside to close
@@ -3283,6 +3484,7 @@
         if (e.target === overlay) {
           overlay.classList.remove('open');
           document.body.style.overflow = '';
+          stopVideos(overlay);
         }
       });
     });
@@ -3293,6 +3495,7 @@
         document.querySelectorAll('.modal-overlay.open').forEach(function(overlay) {
           overlay.classList.remove('open');
           document.body.style.overflow = '';
+          stopVideos(overlay);
         });
       }
     });
@@ -3405,6 +3608,7 @@
             label: '// projeler', title: 'Öne Çıkan <span>Projeler</span>',
             subtitle: 'Gerçek problemlere gerçek çözümler. İşte en çok gurur duyduğum projelerim.',
             items: [
+              { title: 'Otonom Forklift AGV', desc: 'Fabrika içi lojistik için Jetson Orin Nano + STM32 tabanlı otonom forklift. Graf tabanlı haritalama, dinamik engel algılama, QR ve şerit takibiyle hassas yanaşma, PLC haberleşmesi. TEKNOFEST 2026\'da Türkiye 2.\'si.' },
               { title: 'AGV — Doğal Navigasyon & Haritalama', desc: 'Raspberry Pi 4/5 ve ROS2 Humble ile geliştirilen otonom güdümlü araç. SLAM tabanlı haritalama, engel kaçınma ve LIDAR kullanan bölge tespiti içeriyor. TEKNOFEST 2025\'te Türkiye 2.\'si.' },
               { title: 'Otonom Çizgi Takip Eden Robot', desc: 'Raspberry Pi 4/5 ve kamera ile kara çizgiyi takip eden mobil robot. Roboflow ile eğitilmiş ML modeli sayesinde çizgi ayrışmalarını tespit ederek yön belirliyor.' },
               { title: 'Güvenlik Analiz Masaüstü Uygulaması', desc: 'C-Prot stajında Tauri + Svelte + Rust ile geliştirilen tam yığın masaüstü uygulaması. Dosya arama, kötü amaçlı yazılım tespiti ve sertifika tarama algoritmaları içeriyor.' },
@@ -3412,6 +3616,8 @@
               { title: 'ShieldBlock — Reklam Engelleyici', desc: '220+ kurallı üretim kalitesinde Chrome MV3 reklam engelleyici. Çerez bildirimi temizleme (50+ framework), anti-adblock atlatma ve kozmetik filtreleme içeriyor.' },
               { title: 'RequestLab — HTTP Analiz Aracı', desc: 'HTTP isteklerini yakalayan, değiştiren ve tekrar oynatan Chrome DevTools uzantısı. Kural motoru, cURL/fetch/Python dışa aktarma ve WebSocket izleme sunuyor.' }
             ],
+            badge: 'TEKNOFEST 2026 · Türkiye 2.\'si',
+            videoBtn: '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:4px"><polygon points="7 4 20 12 7 20 7 4"/></svg> Videoyu İzle',
             detailBtn: '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:4px"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Detaylar'
           },
           skills: {
@@ -3449,7 +3655,12 @@
           footer: { copy: '© 2026 Adil NAS. Sevgiyle &amp; Kahveyle yapıldı ☕' },
           modals: {
             about: 'Proje Hakkında', features: 'Özellikler', techStack: 'Teknoloji Stack',
-            github: 'GitHub\'da Gör', demo: 'Canlı Demo',
+            github: 'GitHub\'da Gör', demo: 'Canlı Demo', youtube: 'YouTube\'da İzle',
+            forklift: {
+              modalTitle: 'Otonom Forklift AGV — TEKNOFEST 2026',
+              desc: 'Yiğido Ekibi olarak fabrika içi lojistik için geliştirdiğimiz otonom forklift AGV. TEKNOFEST 2026 Sanayide Robotik Uygulamalar Yarışması\'nda Türkiye 2.\'si oldu — art arda ikinci ikinciliğimiz. Ekip lideri olarak sistemin elektronik, donanım ve yazılımını uçtan uca tasarladım; ekip içi görev planlamasını yürüttüm.',
+              features: ['Jetson Orin Nano ana kontrolcü, STM32 ile sensör işleme', 'Graf tabanlı rota kaydı ve haritalama', 'LiDAR / enkoder / IMU ile konumlandırma', 'Haritaya duyarlı dinamik engel algılama', 'QR kod konumlandırma ve renkli kamera ile şerit takibiyle hassas yanaşma', 'Düşük bataryada şarj istasyonuna otomatik yanaşma', 'Kapı geçiş talepleri için PLC haberleşmesi', 'Sesli, LED ve GUI geri bildirimli durum sistemi (yüklü, yüksüz, eve dönüş, acil durdurma)', 'Otonom, joystick ve manuel kontrolü destekleyen Wi-Fi arayüzü']
+            },
             agv: {
               modalTitle: 'AGV — Doğal Navigasyon & Haritalama',
               desc: 'Raspberry Pi 4/5 ve ROS2 Humble (Ubuntu) ile geliştirilen otonom güdümlü araç. SLAM tabanlı haritalama, engel kaçınma ve LIDAR kullanan kısıtlı/düşük hız bölgesi tespiti özellikleri içeriyor. Teknofest "Sanayide Dijital Teknolojiler" yarışmasında (İleri Kategori) Türkiye 2.\'si oldu.',
@@ -3524,6 +3735,7 @@
             label: '// projects', title: 'Featured <span>Projects</span>',
             subtitle: "Real solutions to real problems. Here are the projects I'm most proud of.",
             items: [
+              { title: 'Autonomous Forklift AGV', desc: 'Autonomous forklift for in-factory logistics built on Jetson Orin Nano + STM32. Graph-based mapping, dynamic obstacle detection, QR and lane-tracking docking, PLC communication. 2nd place in Turkey at TEKNOFEST 2026.' },
               { title: 'AGV — Natural Navigation & Mapping', desc: 'Autonomous guided vehicle built with Raspberry Pi 4/5 and ROS2 Humble. Features SLAM-based mapping, obstacle avoidance and LIDAR-based zone detection. 2nd place at TEKNOFEST 2025.' },
               { title: 'Autonomous Line-Following Robot', desc: 'Mobile robot using Raspberry Pi 4/5 and camera to follow a black stripe. An ML model trained with Roboflow detects line splits and determines direction.' },
               { title: 'Security Analysis Desktop App', desc: 'Full-stack desktop security app built with Tauri + Svelte + Rust during C-Prot internship. Features file search, malware detection and certificate scanning algorithms.' },
@@ -3531,6 +3743,8 @@
               { title: 'ShieldBlock — Ad Blocker', desc: 'Production-grade Chrome MV3 ad blocker with 220+ rules. Features cookie banner removal (50+ frameworks), anti-adblock bypass and cosmetic filtering.' },
               { title: 'RequestLab — HTTP Analysis Tool', desc: 'Chrome DevTools extension to intercept, modify and replay HTTP requests. Offers a rules engine, cURL/fetch/Python export and WebSocket monitoring.' }
             ],
+            badge: 'TEKNOFEST 2026 · 2nd in Turkey',
+            videoBtn: '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:4px"><polygon points="7 4 20 12 7 20 7 4"/></svg> Watch Video',
             detailBtn: '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:4px"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Details'
           },
           skills: {
@@ -3568,7 +3782,12 @@
           footer: { copy: '© 2026 Adil NAS. Made with Love &amp; Coffee ☕' },
           modals: {
             about: 'About the Project', features: 'Features', techStack: 'Tech Stack',
-            github: 'View on GitHub', demo: 'Live Demo',
+            github: 'View on GitHub', demo: 'Live Demo', youtube: 'Watch on YouTube',
+            forklift: {
+              modalTitle: 'Autonomous Forklift AGV — TEKNOFEST 2026',
+              desc: 'An autonomous forklift AGV for in-factory logistics, built with Yigido Team. It won 2nd place in Turkey at the TEKNOFEST 2026 Robotic Applications in Industry Competition — our second consecutive 2nd place. As team lead, I designed the system end-to-end across electronics, hardware and software, and planned and delegated tasks within the team.',
+              features: ['Jetson Orin Nano as the main controller, STM32 for sensor processing', 'Graph-based route recording and mapping', 'LiDAR / encoder / IMU localization', 'Map-aware dynamic obstacle detection', 'Precise docking with QR-code positioning and color-camera lane tracking', 'Automatic docking at the charging station on low battery', 'PLC communication for gate access requests', 'Robot state system (loaded, unloaded, return-to-home, emergency stop) with audio, LED and GUI feedback', 'Wi-Fi GUI supporting autonomous, joystick and manual control']
+            },
             agv: {
               modalTitle: 'AGV — Natural Navigation & Mapping',
               desc: 'Autonomous guided vehicle built with Raspberry Pi 4/5 and ROS2 Humble (Ubuntu). Features SLAM-based mapping, obstacle avoidance, and LIDAR-based restricted/low-speed zone detection. Achieved 2nd place in the Teknofest "Digital Technologies in Industry" competition (Advanced Category).',
@@ -3716,6 +3935,9 @@
           if (projDescs[i]) projDescs[i].textContent = item.desc;
         });
         inSecAll('projects', '.btn-detail').forEach(function(btn) { btn.innerHTML = t.projects.detailBtn; });
+        inSecAll('projects', '.btn-video').forEach(function(btn) { btn.innerHTML = t.projects.videoBtn; });
+        el = inSec('projects', '.project-badge');
+        if (el) el.textContent = t.projects.badge;
 
         // SKILLS
         el = inSec('skills', '.section-label');
@@ -3775,7 +3997,7 @@
         if (footerCopy) footerCopy.innerHTML = t.footer.copy;
 
         // MODALS
-        ['agv', 'linerobot', 'secapp', 'warehouse', 'shieldblock', 'requestlab'].forEach(function(id) {
+        ['forklift', 'agv', 'linerobot', 'secapp', 'warehouse', 'shieldblock', 'requestlab'].forEach(function(id) {
           var modal = document.getElementById('modal-' + id);
           if (!modal) return;
           var mt = t.modals[id];
@@ -3790,8 +4012,13 @@
           var featureList = modal.querySelector('.modal-features');
           if (featureList) featureList.innerHTML = mt.features.map(function(f) { return '<li>' + f + '</li>'; }).join('');
           var links = modal.querySelectorAll('.modal-links a');
-          if (links[0]) links[0].innerHTML = '&#128279; ' + t.modals.github;
-          if (links[1]) links[1].innerHTML = '&#127758; ' + t.modals.demo;
+          if (links[0] && links[0].classList.contains('link-youtube')) {
+            var ytIcon = links[0].querySelector('svg');
+            links[0].innerHTML = (ytIcon ? ytIcon.outerHTML + ' ' : '') + t.modals.youtube;
+          } else {
+            if (links[0]) links[0].innerHTML = '&#128279; ' + t.modals.github;
+            if (links[1]) links[1].innerHTML = '&#127758; ' + t.modals.demo;
+          }
         });
 
         // BACK TO TOP

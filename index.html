@@ -1147,8 +1147,12 @@
     ===================================================== */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
+    }
+
+    @media (max-width: 700px) {
+      .skills-grid { grid-template-columns: 1fr; }
     }
 
     .skill-category {
@@ -1181,41 +1185,10 @@
       color: var(--text-primary);
     }
 
-    .skill-item {
-      margin-bottom: 1rem;
-    }
-
-    .skill-meta {
+    .skill-tags {
       display: flex;
-      justify-content: space-between;
-      margin-bottom: 0.4rem;
-    }
-
-    .skill-name { font-size: 0.88rem; font-weight: 500; }
-
-    .skill-pct {
-      font-size: 0.78rem;
-      font-family: 'JetBrains Mono', monospace;
-      color: var(--accent-light);
-    }
-
-    .skill-bar {
-      height: 6px;
-      background: rgba(255,255,255,0.06);
-      border-radius: 3px;
-      overflow: hidden;
-    }
-
-    [data-theme="light"] .skill-bar {
-      background: rgba(0,0,0,0.06);
-    }
-
-    .skill-bar-fill {
-      height: 100%;
-      border-radius: 3px;
-      background: var(--gradient-1);
-      width: 0%;
-      transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
 
     /* =====================================================
@@ -2452,75 +2425,76 @@
   <section id="skills">
     <div class="section-label">// beceriler</div>
     <h2 class="section-title">Teknoloji <span>Stackim</span></h2>
-    <p class="section-subtitle">Yıllar içinde ustalık kazandığım araçlar ve teknolojiler.</p>
+    <p class="section-subtitle">Projelerimde aktif olarak kullandığım diller, araçlar ve teknolojiler.</p>
 
     <div class="skills-grid">
       <div class="skill-category reveal">
         <div class="skill-cat-header">
           <div class="skill-cat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-          <div class="skill-cat-title">Yazılım Geliştirme</div>
+          <div class="skill-cat-title">Programlama Dilleri</div>
         </div>
-        <div class="skill-item">
-          <div class="skill-meta"><span class="skill-name">C++ / Python</span><span class="skill-pct">88%</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" data-pct="88"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-meta"><span class="skill-name">React / Node.js</span><span class="skill-pct">80%</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" data-pct="80"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-meta"><span class="skill-name">Svelte / Tauri / Rust</span><span class="skill-pct">70%</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" data-pct="70"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-meta"><span class="skill-name">SQL / Flask</span><span class="skill-pct">72%</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" data-pct="72"></div></div>
+        <div class="skill-tags">
+          <span class="tag">C++</span>
+          <span class="tag">Python</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">C#</span>
+          <span class="tag">Java</span>
+          <span class="tag">SQL</span>
+          <span class="tag">HTML/CSS</span>
         </div>
       </div>
 
       <div class="skill-category reveal reveal-delay-1">
         <div class="skill-cat-header">
           <div class="skill-cat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="12" y1="16" x2="12" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg></div>
-          <div class="skill-cat-title">Robotik & Gömülü</div>
+          <div class="skill-cat-title">Robotik &amp; Yapay Zeka</div>
         </div>
-        <div class="skill-item">
-          <div class="skill-meta"><span class="skill-name">ROS2 (Nav2, SLAM)</span><span class="skill-pct">90%</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" data-pct="90"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-meta"><span class="skill-name">OpenCV / Sensör Füzyon</span><span class="skill-pct">85%</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" data-pct="85"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-meta"><span class="skill-name">Arduino / RPi 4-5 / Jetson</span><span class="skill-pct">88%</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" data-pct="88"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-meta"><span class="skill-name">LIDAR / IMU / Sensör Entegrasyonu</span><span class="skill-pct">82%</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" data-pct="82"></div></div>
+        <div class="skill-tags">
+          <span class="tag">ROS2</span>
+          <span class="tag">Nav2</span>
+          <span class="tag">SLAM Toolbox</span>
+          <span class="tag">ros2_control</span>
+          <span class="tag">Gazebo</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">ML / Deep Learning</span>
+          <span class="tag">LangChain</span>
+          <span class="tag">CrewAI</span>
+          <span class="tag">Ollama</span>
         </div>
       </div>
 
       <div class="skill-category reveal reveal-delay-2">
         <div class="skill-cat-header">
-          <div class="skill-cat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-          <div class="skill-cat-title">DevOps & AI Araçlar</div>
+          <div class="skill-cat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <div class="skill-cat-title">Teknolojiler &amp; Araçlar</div>
         </div>
-        <div class="skill-item">
-          <div class="skill-meta"><span class="skill-name">Git / Docker / Linux</span><span class="skill-pct">88%</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" data-pct="88"></div></div>
+        <div class="skill-tags">
+          <span class="tag">React</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Flask</span>
+          <span class="tag">Tauri</span>
+          <span class="tag">Svelte</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Linux</span>
+          <span class="tag">Git/GitHub</span>
         </div>
-        <div class="skill-item">
-          <div class="skill-meta"><span class="skill-name">LangChain / CrewAI</span><span class="skill-pct">75%</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" data-pct="75"></div></div>
+      </div>
+
+      <div class="skill-category reveal reveal-delay-3">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></div>
+          <div class="skill-cat-title">Gömülü &amp; Donanım</div>
         </div>
-        <div class="skill-item">
-          <div class="skill-meta"><span class="skill-name">Ollama / LLM Tools</span><span class="skill-pct">72%</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" data-pct="72"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-meta"><span class="skill-name">ML / Deep Learning</span><span class="skill-pct">72%</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" data-pct="72"></div></div>
+        <div class="skill-tags">
+          <span class="tag">Jetson</span>
+          <span class="tag">STM32</span>
+          <span class="tag">Raspberry Pi</span>
+          <span class="tag">Arduino</span>
+          <span class="tag">LiDAR / IMU</span>
+          <span class="tag">I2C / SPI / UART</span>
+          <span class="tag">CAN</span>
+          <span class="tag">PWM / GPIO</span>
+          <span class="tag">PLC</span>
         </div>
       </div>
     </div>
@@ -3366,23 +3340,6 @@
     })();
 
     /* =====================================================
-       SKILL BARS ANIMATION
-    ===================================================== */
-    (function() {
-      const bars = document.querySelectorAll('.skill-bar-fill');
-      const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            const pct = entry.target.getAttribute('data-pct');
-            entry.target.style.width = pct + '%';
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.5 });
-      bars.forEach(function(bar) { observer.observe(bar); });
-    })();
-
-    /* =====================================================
        TIMELINE SCROLL FILL
     ===================================================== */
     (function() {
@@ -3632,8 +3589,8 @@
           },
           skills: {
             label: '// beceriler', title: 'Teknoloji <span>Stackim</span>',
-            subtitle: 'Yıllar içinde ustalık kazandığım araçlar ve teknolojiler.',
-            catTitles: ['Yazılım Geliştirme', 'Robotik & Gömülü', 'DevOps & AI Araçlar']
+            subtitle: 'Projelerimde aktif olarak kullandığım diller, araçlar ve teknolojiler.',
+            catTitles: ['Programlama Dilleri', 'Robotik & Yapay Zeka', 'Teknolojiler & Araçlar', 'Gömülü & Donanım']
           },
           certificates: {
             label: '// sertifikalar', title: 'Aldığım <span>Sertifikalar</span>',
@@ -3771,8 +3728,8 @@
           },
           skills: {
             label: '// skills', title: 'My Tech <span>Stack</span>',
-            subtitle: "Tools and technologies I've mastered over the years.",
-            catTitles: ['Software Development', 'Robotics & Embedded', 'DevOps & AI Tools']
+            subtitle: 'Languages, tools and technologies I actively use in my projects.',
+            catTitles: ['Programming Languages', 'Robotics & AI', 'Technologies & Tools', 'Embedded & Hardware']
           },
           certificates: {
             label: '// certificates', title: 'My <span>Certificates</span>',
